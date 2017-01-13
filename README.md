@@ -1,6 +1,6 @@
 # Minimum Information About Cell Migration Experiments (MIACME)
 
-Developed by the Cell Migration Standardization Organization (CMSO; http://cmso.science).
+Developed by the Cell Migration Standardization Organization ([CMSO](http://cmso.science)).
 
 ### MIACME specifications
 
