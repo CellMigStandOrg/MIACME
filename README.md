@@ -22,9 +22,7 @@ The MIACME reporting guideline and its associated documentation is made availabl
 
 ## How to contribute
 
-The MIACME reporting guidelines have been developed with and for the cell migration community. We welcome and appreaciate contributions, which may be provided in different ways:
-- participate the [Cell Migration Standardization Organization workshops](https://cmso.science/meetings/)
-- report issues in our [tracker](https://github.com/CellMigStandOrg/MIACME/issues)
+For information about how to contribute, visit <a href="http://cellmigstandorg.github.io/MIACME/v0.1/spec/#contribute">the specification</a>.
 
 ## Notes
 
