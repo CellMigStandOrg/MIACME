@@ -13,7 +13,7 @@ The MIACME reporting guideline and its associated documentation is made availabl
 
 ### Overall documents
 
-- [MIACME live spreadsheet]()
+- [MIACME live spreadsheet - OPEN FOR COMMENTS](https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit?usp=sharing)
 
 ### Version 0.1 
 
@@ -21,6 +21,10 @@ The MIACME reporting guideline and its associated documentation is made availabl
 - [MIACME v0.1 spreadsheet]()
 
 ## How to contribute
+
+The MIACME reporting guidelines have been developed with and for the cell migration community. We welcome and appreaciate contributions, which may be provided in different ways:
+- participate the [Cell Migration Standardization Organization workshops](https://cmso.science/meetings/)
+- report issues in our [tracker](https://github.com/CellMigStandOrg/MIACME/issues)
 
 ## Notes
 
