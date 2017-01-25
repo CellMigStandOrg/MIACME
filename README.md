@@ -2,7 +2,7 @@
 
 ## Overview 
 
-Developed by the Cell Migration Standardisation Organization ([CMSO](http://cmso.science)).
+For an overview on MIACME, please read the [specification abstract](http://cellmigstandorg.github.io/MIACME/v0.1/spec/#abstract).
 
 ## License 
 
@@ -17,8 +17,8 @@ The MIACME reporting guideline and its associated documentation is made availabl
 
 ### Version 0.1 
 
-- [MIACME v0.1 specification](http://cellmigstandorg.github.io/MIACME/v0.1/spec/) - only a template right now
-- [MIACME v0.1 spreadsheet]()
+- [MIACME v0.1 specification](http://cellmigstandorg.github.io/MIACME/v0.1/spec/)
+- [MIACME v0.1 spreadsheet](https://docs.google.com/spreadsheets/d/1O-Mg2KbeWuU7Sx7hwyciXTAEA4WO1NwqzI-PnPuQDWc/edit#gid=0)
 
 ## How to contribute
 
