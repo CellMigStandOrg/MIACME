@@ -1,0 +1,239 @@
+Entity	Entity Annotation	Property	Property Annotation	Condition on Property	Definition 	Value Type	Recommended Ontology / Resource	Cardinality	Requirement Level	Evidence	Example(s)	Notes
+An object that can exist independenty and can be identified uniquely.	An ontology concept that annotates the corresponding entity.	An attribute describing the corresponding entity.	An ontology concept that annotates the corresponding property.	The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).	A statement of the exact meaning of the entity and/or property. 	The type of a property value.	The recommended resources (e.g. ontology or database) that should be used to assigned the values for the corresponding Entity/Property pair.	The expected number of occurrences for a particular property.	Following RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt), a word indicating the level of necessity for a particular property. 	A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.	Typical cases for the values of a particular property. 	Additional comments that may help the interpretation and representation of the corresponding entity and/or property.
+SECTION: Information about Investigation / Project and Experiment / Study (the experimental context)												
+												
+Investigation	planned process				A planned activity that involves one or more studies.					CellMissy schema (project)		
+		identifier			Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.	integer		0..1	SHOULD	CellMissy schema (project.projectNumber)		
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.	string		0..1	SHOULD			
+		description			A textual narrative comprised of one or more statements about the investigation.	string		1	MUST	CellMissy(project.description)		
+		contacts			The person(s) which contributed to the investigation, such as the Principal Investigator/corresponding author in publications or other researchers involved.	Person		1..n	MUST	CellMissy(user), Survey		
+		studies 			The studies associated with the Investigation.	Study		1..n	MUST			
+		publications			Scholarly articles associated with the investigation, usually describing the methods applied and conclusions reached by the investigation. 	Publication		0..n	SHOULD	Survey		
+		acknowledges			The grant(s) which funded and supported the investigation.	Grant		0..n	MAY	ISA experience		
+		conclusions			A set of statements summarizing the findings of the investigation. It could be a URI referring to a nanopublication. 	string or URL		0..n	MAY			
+		 										
+Study	investigation				A planned activity that consists on study planning, study design execution,  documentation and which produces conclusion(s). 							CellMissy includes 'magnification' as part of the experiment/study but in MIACME we include 'magnification' as a property of the instrument and it is removed from a property of the Study.
+in CellMissy, in vitro experiments only		identifier			Primary identifier for the experiment.	integer		 	MUST			
+		description	investigation description		A textual narrative comprised of one or more statements about the study.	string		1	MUST	CellMissy(experiment.purpose)		
+		type			The type of study. 	string or CV 		1	MUST	http://onlinelibrary.wiley.com/doi/10.1034/j.1600-0854.2002.30105.x/epdf  and https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4602067/	xy or 2D migration+end-point; xyz:3D migration (focal planes + end-point; xyt 2D migration in time (either time-lapse or discrete time points), xyzt, xyC (C channels, spectral measurements); 5D concept	
+		instruments			One or more instruments that are used in this study.	Instrument		1..n	MUST	CellMissy		
+		plates			One or more plates used in the study. 	Plate		1..n	MUST	CellMissy(plateFormat)		plate format is unique to the study
+		experimentalConditions			One or more experimental conditions considered for this study.	ExperimentalCondition		1..n	MUST	CellMissy(PlateCondition)		Need to agree on the name: experimental condition?
+		rawData			The raw data generated in this study.	Dataset (or ImageDataset)		0..n	SHOULD			
+		derivedData			The derived data from this study.	DerivedData		0..n	SHOULD			
+		dates			Dates relevant to the study.  	Date		0..n	SHOULD	CellMissy(experiment.experimentDate)	start date, publication date	
+		experimentStatus			The life cycle of the experiment: planned, ongoing, completed.	string		0..1	MAY	CellMissy	planned, ongoing, completed	
+		conclusions			A set of statements summarizing the findings of the study. It could be a URI referring to a nanopublication. 	string or URL		0..n	MAY			
+												
+Date					A date							
+		date			A string representing a date.	string compliant with ISO8601		1	MUST			
+		type			The type of date.			1	MUST		publication date, release date	
+												
+Instrument					The instrument used for the study.							
+		name			The name of the instrument.	string				CellMissy schema		
+		type			The kind of instrument, ideally from a controlled vocabulary.	string or CV					transmission microscope, epifluoresnce microscope, confocal microscope	
+		manufacturer			The organisation that produced the Instrument, or a textual description of such organisation.	string or Organization					Olympus, Zeiss, Leica	
+		objectiveType			The range of objective manufacturer and objective acronyms of the instrument, specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view) 	string or CV		0..n	MAY		Olympus UPLSAPO 20x, Leica HI PLAN 4x/0.10, Nikon FI Plan Apo VC 60XWI	Objective names or acronymes are company specific (https://www.microscopyu.com/microscopy-basics/microscope-objective-specifications) and can be obtained from company sites e.g. http://www.olympus-lifescience.com/en/objectives/; the specific objective type used in an study will appear in the ImagingProtocol.
+		objectiveMagnification			Linear magnification of the objective	integer 		0..n	MAY	CellMissy(Magnification.magnificationNumber)	10 (meaning 10x)	
+		objectiveNumericalAperture			Value that indicates the light acceptance angle of the objective ( determines the light gathering power, resolving power, and depth of  field of the objective).	double		0..n	MAY		0.75	
+		voxelSize			The size of the voxel (usually the same in the x and in y directions).	(double, double, double)		0..1	MAY	Descriptors ranking included pixelSize, here generalised to voxelSize.	0.73	Pixel size depends on the objective lens.
+		voxelSizeUnit			The unit of measurement of the voxel size.	string or CV		0..1	MAY	Descriptors ranking included pixelSizeUnit, here generalised to voxelSizeUnit.	µm, mm	
+		voxelConversionFactor			Factor to use to convert the voxel size into µm and viceversa.	(double, double, double)			MAY	CellMissy(Instrument.conversionFactor)		The conversion factor is different at each magnification. Usually, coversion factor at magnification 10x is used as a reference.
+												
+												
+Plate					Cell culture container of n x m wells used for in vitro assay.					CellMissy(PlateFormat)		In CellMissy, the PlateFormat includes a property for the wellSize, but in MIACME this is not required (as the information on the well size can be extracted from the Plate.format).
+		type			The type of the plate or migration device	string or CV		0..1	MUST	doc	cell culture multiwell plate, µ-plate, transwell assay plate, chemotaxis assay device 	
+		format			The format of the container e.g. multiwell plate, in terms of number of columns and rows of the rectangular matrix	integer		1	MUST		6, 24, 96, 384 or 1536 sample wells arranged in a 2:3 rectangular matrix	
+		numberOfCols			The number of columns of the matrix.	integer		1	MUST			
+		numberOfRows			The number of rows of the matrix.	integer		1	MUST			
+		wells 			The list of wells that form the plate.	Well		1..n	MUST			
+		manufacturer			The company that produces and sells the plate.	string or CV		0..1	MAY	doc	Sigma-Aldrich, Corning, ibidi	
+		plateCoating 			Intrinsic coating provided by the manufacturer.	string or CV		0..1	MAY		collagen	
+												
+Well					Each compartment in a microtiter plate.							
+		columnIdentifier			An identifier for the column position of the well in the plate matrix.	string		1	MUST	CellMissy(Well.colNumber)	2	
+		rowIdentifier			An identifier for the row position of the well in the plate matrix.	string		1	MUST		http://labstats.net/figs/96well_unbal.png	
+		images			The datasets of images collected for this well.	ImageDataset		0..n	SHOULD	CellMissy(WellImagingType)	data images collected for the specific well	
+												
+Person					A human being.							
+		identifier			A persistent identifier of the person, it should be an ORCID	string		1	MUST			
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.	string		1	MUST			
+		email			The email address.	string		1..n	SHOULD			
+		firstName			The given name.	string		1	MAY			
+		lastName			The family name.	string		1	MAY			
+		affiliations			The organizations to which the person is associated with.	Organization 		0..n	MAY			
+		roles			The roles assumed by the person. Ideally from a controlled vocabulary or ontology.	string or CV		0..n	MAY			
+												
+Publication					An article, report, or generally a document describing the study.							
+		identifier			A persistent identifier for the publication, it should be a DOI or pubmed identifier	string or URL		1	MUST			
+		identifierSource			Information about the organisation or namespace responsible for minting the identifier.	string		0..1	SHOULD			
+		title			The title of the publication.	string		0..1	SHOULD			
+		publicationVenue			The venue where the publication appears (journal, publishing platform etc).	string		0..1	SHOULD			
+		authors			The list of authors that appear on the publication.	Person		0..n	SHOULD			
+		date			publication date	Date[type='publication']		0..1	SHOULD			
+												
+Grant					An allocated sum of funds given by a government or other organization for a particular purpose.							
+		identifier			Primary identifier for the grant.	string		0..1	SHOULD			
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.	string		0..1	SHOULD			
+		name			The name of the grant and its funding program.	string		1	MUST			
+		funders			The person(s) or organization(s) which has awarded the funds supporting the project.	(Person or Organization) and role funder		1..n	MUST			
+												
+Organization					Legal or physical entity corresponding to a business or administration							
+		identifier			Primary identifier for the organisation.		For funders, fundref					
+		identifierSource			Information about the organisation or namespace responsible for minting the identifier.	string		0..1	SHOULD			
+		name			The name of the organization.	string		1	MUST		University of Oxford	
+												
+SECTION: Biological Conditions												
+												
+ExperimentalCondition					The experimental conditions involve the environmental and longitudinal conditions, thus recapitulating anything from sample, cell seeding conditions, to cell maintenance, to cell perturbation, to cell assay and data acquisition.					CellMissy(PlateCondition)		
+		wells			The list of wells that form the experimental condition.	Well		1..n	MUST			wells to which a specific experimental condition applies (if more than 1: replicates)
+		treatments			A list of ordered treatments	Treatment		1..n	MUST			
+		samples			The list of samples.	Sample		1..n	MUST	CellMissy(cellLine)		
+		assay			The type of migration/invasion assay and its specifications	Assay		1	MUST			
+		assayMedium			The growth medium in which cell migration is assayed.	AssayMedium		1	MUST			
+		extraCellularMatrix		if assay.dimension=3D	The (artificial) 3D matrix in which cells are embedded for migration assay	ExtraCellularMatrix		0..1	SHOULD	CellMissy(ecm)		
+		coating		if assay.dimension=2D	The 2D (protein) layer used as cell culture surface for migration assay	Coating		0..1	SHOULD			
+		growthMedium			The growth medium in which cells are cultured (may be different from AssayMedium)	string		0..1	MAY	CellMissy(CellLine.growthMedium)		
+		seedingDensity			Number of cells seeded per surface/volume unit for the migration assay	integer		1	MAY	CellMissy		
+		seedingTime			Time at which cell were seeded relative to start assay	string		1	MAY	CellMissy		
+		serum			The serum-supplement used for the in vitro cell culture.	string		0..1	MAY	CellMissy		
+		serumConcentration			The concentration of the serum-supplement.	double		1	MAY	CellMissy		
+		serumConcentrationUnit			The unit of the serum concentration.	string or CV		1				
+												
+Assay					Test performed either on material taken from a subject or on a whole initial subject, producing qualitative or quantitative measurements.							
+		model			The nature of physiological model.	string or CV		1	MUST		in vivo, in vitro	The current MIACME version (0.1) focuses on in vitro studies, but this property will allow to indicate if the experiment is in vivo, for which further details will be added in future versions.
+		type			The specific type of the assay used to measure cell migration.	string or CV		1	MUST		cell-exclusion zone assay, single-cell migration assay, ORIS assay, wound-healing assay, fence assay, spheroid migration assay, microfluidics assay, see other examples in e.g. DOI: 10.1016/j.mrrev.2012.08.001	
+		dimensionality			The dimensionality of the assay: 2D is for a cell migration study, 3D for a cell invasion study.	string or CV		1	MUST	Survey	2D, 3D 	this will only be either 2D (cell on plastic or ECM coating), 3D (cell embedded in ECM), 2.5D (cells on ECM matrix)
+		temporalResolution			The precision of cell migration measurements with respect to time.	string or CV		1	SHOULD	Survey	dynamic, end-point, frames/time information	
+		scaleOfObservation			The precision of cell migration measurements with respect to scale.	string or CV		1..n	SHOULD	Survey	single-cell, cell population, collective cell migration, subcellular events	
+		channelFlowRate		if type=microfluidics assay	Rate of flow in a microfluidic channel.	double		0..1	MAY		e.g. see https://dx.doi.org/10.1063%2F1.4718721	
+		channelFlowRateUnit		if type=microfluidics assay	The unit of the flow rate.	string or CV		0..1	MAY		μl/min	
+												
+												
+AssayMedium					The growth medium in which cell migration is assayed (this may differ from growth medium but does not include treatment).					CellMissy		
+		medium			The type of the growth medium used for the assay.	string or CV		1	MUST			
+		serum			The serum possibly used to supplement the medium during assay	string		1	MUST			
+		serumConcentration			The concentration of the serum during assay	double		1	MUST		%	
+		serumConcentrationUnit			The unit of the serum concentration.	string or CV		1	MUST			
+		volume			The total volume used for the assay medium.	double		0..1	MAY 			
+		volumeUnit			The unit corresponding to the volume measurement.	string or CV	Unit Ontology	0..1	MAY, MUST if volume is provided			
+		migrationModulator			A reagents that modulates cell migration, added to the growth medium.	string or CV or database access number		0..n 	SHOULD 	ranking	growth factor or chemokines e.g. EGF, SDFalfa added to assay medium IF NOT used as treatment - Example resources to be considered: for chem compound dbases or for bioactive/pharmaceutical compounds:  http://www.guidetopharmacology.org/ ; https://pubchem.ncbi.nlm.nih.gov/compound ; https://www.ebi.ac.uk/chebi/init.do (chemical entities of biological interest) For a specific compounds, consider e.g. for ROCK inhibitor https://en.wikipedia.org/wiki/Y-27632	
+		modulatorDistribution			mode of application of modulator 			0..n	MAY	ranking	gradient, batch application	
+ 		modulatorConcentration			The concentration (or concentration range for gradient) of the migration modulator, if present.	double | (double, double) if gradient		0..n 	MAY 	ranking		
+												
+Treatment					Manipulation/perturbation of which the (migratory) effect is being tested.					CellMissy (treatment)		
+		identifier			An identifier for the treatment.	string			SHOULD			
+		perturbationAgentType			The perturbagen of  the treatment, ideally from a controlled vocabulary.	string or CV 		1	MUST	CellMissy(treatmentTypeCategory); Survey(MI32)	gene construct, siRNA, microRNA construct, chemical compound	
+		perturbationAgentNames			One or more names according to the perturbation agenet type (these could be the drugs for chemical compounds or genes for gene constructs).	string or CV or database identifier	e.g. https://www.addgene.org/	1..n	MUST	Survey(MI34); CellMissy(treatmentTypeName)	ROCK inhibitor	This property will list of the perturbation agents relevant to the type (e.g. all the genes in a gene construct). If using complex vectors with multiple genes (e.g. reprogrammed cells with myc, oct-4,lin-1) the genes should be listed here.
+		dose			The quantity of the perturbation agent administrated.	double			MUST		1	
+		doseUnit			The unit associated to the dose.	string			MUST		µg/ml	
+		experimentalConditions				ExperimentalCondition		1..n	MUST	CellMissy(PlateCondition)		
+		provider			The commercial company producing the perturbation agent.				MAY			
+		perturbationAgentDelivery 			The information about how the perturbation agent is delivered.  						electroporation, virus delivery, liposomes	
+		drugSolvent 		perturbationAgentType='chemical compound'	The solvent used for the drug tested, if any.	string		0..1	MAY	CellMissy(drugSolvent)		
+		drugSolventConcentration		perturbationAgentType='chemical compound'	The concentration of the solvent used for the drug tested, if any.	double		0..1	MAY			
+		targettedGeneIdentifier			The identifier of the expressed (or targetted) gene(s).	string or database identifier		0..n	MAY or MUST(perbutationAgentType=siRNA, microRNA, exogenous expression )	Survey(MI35)	actin, vinculin	
+		targettedGeneMode 			The mode of the gene expression.	string or CV		0..1	MAY or MUST(perbutationAgentType=siRNA, microRNA, exogenous expression )		transient expression, stable cell line, transduced cell line, doxycyclin induced expression	
+		expressedGeneTagIdentifier			The identifier of the tag of the expressed gene, which is part of the fusion proteins.	string or database identifier		0..n	MAY or MUST(perbutationAgentType=siRNA, microRNA, exogenous expression )	Survey(MI36)	GFP, mCherry, Myc	
+												
+		timing			Time elapsed between start of treatment and migration monitoring event.	string			MAY		relative time: +6 hours	
+		modeOfApplication			The mode in time of application of the treatment.	string or CV		0..1	SHOULD	Survey(MI31)	sequential or concomitant	
+												
+Coating					The 2D (protein) layer used as cell culture surface for migration assay							In CellMissy, only the ECM is represented. For MIACME, we decided to separate in two entities: ECM and Coating, to represent the 3D and 2D cases respectively.
+		identifier						0..1	SHOULD	CellMissy		
+		type			The type of the coating	string or CV		0..n	MUST	CellMissy	collagen, fibronectin, polylysine, adhesive/topographical microratchets or tilted micropillars, ...	renamed this to 'coating' to distinguish it from plateCoating, plate entity, above.
+		concentration/density			The concentration of the coating solution	double		1	MUST	CellMissy(ecm.concentration)	1.5	
+		concentrationUnit			Unit of measurement of the concentration.	string or CV		1	MUST	CellMissy(ecm.concentrationUnit)	mg/ml	
+		coatingVolume			The volume of the coating solution	double		1	MAY	CellMissy	200	
+		coatingVolumeUnit			The unit of measurement of volume.	string or CV	Unit Ontology	1	MAY	CellMissy	microliter 	
+		coatingTemperature			The temperature at which the coating took place.	double		1	MAY	CellMissy	Room Temperature (RT)	
+		coatingTemperatureUnit			The unit of measurement of the temperature	string or CV	Unit Ontology	1	MAY	CellMissy	degree celcius	
+		coatingTime 			The relative time at which the coating component were allowed to adhere to the surface	double		1	MAY	CellMissy	1	
+		coatingTimeUnit			The unit of measurement of time.	string or CV	Unit Ontology	1	MAY	CellMissy	hour	
+												
+												
+ExtraCellularMatrix					The (artificial) 3D matrix in which cells are embedded for migration assay							
+		identifier						0..1	SHOULD	CellMissy		
+		type			The type of matrix or hydrogel 	string or CV		0..n	MUST	Survey(MI28)	collagen type I gel, matrigel, synthetic scaffold, cell/tissue derived 3D matrix	specified for 3D assays (cells are in the 3D-matrix) or for 2.5 assays (cell are on top of the 3D-matrix)
+		dimension			The dimension of the extracellular matrix.	string or CV		1	MUST		2.5D,3D	
+		density			density based on concentration of proteins or compound present in the extracellular matrix 	double		1..n	MUST		2.5	
+		densityUnit			The unit corresponding to the density property, ideally from a controlled vocabulary.	string or CV		1	MUST		mg/ml	
+		MatrixVolume			The volume of the matrix used per well	double		0..n	MAY		200	
+		matrixVolumeUnit			The unit associated with volume 	string or CV		0..1	MAY		microliter 	
+		matrixGelling_pH			The pH used for the formation of the 3D-matrix.	double		0..1	MAY	CellMissy	7.4	
+		matrixGellingTemperature			The temperature at the 3D matrix was formed	double		0..1	MAY	CellMissy	Room Temperature	
+		matrixGellingTemperatureUnit			The unit associated with temperature 	string or CV	Unit Ontology	0..1	MAY			
+		matrixGellingTime			The duration at the 3D matrix was formed	double		0..1	MAY	CellMissy	30 min, 1 hour	
+		matrixGellingTimeUnit			The unit associated with time. 	string or CV	Unit Ontology	0..1	MAY			
+												
+Sample					The biological sample used in the assay/study.					extending CellMissy (CellLine)		CellMissy includes CellLine as a type, in MIACME we decided to make this more generic and consider Sample, where the Sample.type could be a cell line.
+		identifier			The identifier for the sample.							
+		type			The type of the biological sample used in the study.	string or CV or database ID		1	MUST	extending CellMissy(cell_line_type)	cell line, primary cell, tissue slices, isolate, zebrafish, organoids, other animal models (mouse etc)	At the moment, we focus on in vitro experiments, but for in vivo experiment the sample.type could also be an animal model (zebrafish, mouse)
+		organism 			The organism of the sample.	string or CV	NCBI Taxonomy (https://biosharing.org/bsg-s000154)	1	MUST	workshop	human, mouse	
+		name			The sample name	string or access ID	Cellosaurus (https://biosharing.org/biodbcore-000826)	1	SHOULD		MDA-MB-231	
+		consent		organism='homo sapiens'	If the organism is Homo Sapiens, indicate if consent was obtained to use the biological material.	boolean			MAY, MUST if organism = homo sapiens			
+		isolationProtocol 			The protocol followed to isolate primary cells.	string or CV		1	SHOULD, if type='primary cell', MUST	ranking 	primary cells isolation (this should be there only for primary cells)	
+												
+SECTION: Cell Migration Data												
+												
+												
+ImageDataset (extends Dataset)					The images collected for a particular well and a particular technique.					CellMissy(WellHasImagingType)		CellMissy has WellImagingType.xCoordinate and yCoordinate that are specific parameters for CellMissy settings, so removed from this entity.
+		identifier							SHOULD			
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.							
+		well			The well from which the images are collected.	Well		1	MUST			
+		imagingProtocols			The image type used at the acquisiton moment.	ImagingProtocol		1..n	MUST	CellMissy		
+		sequenceNumber			The integer identifying the order in a sequence at which this image was imaged/acquired. 	integer		1	MAY	CellMissy	1, 2, ... 96	
+												
+ImagingProtocol					The protocol followed for the image acquisition.					CellMissy(ImagingType) 		
+		identifier										
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.							
+		imagingMethod			The type of the image acquisition technique.	string or CV		1	MUST	CellMissy(ImagingType.name) 	Bright-Field, Phase-Contrast, Fluorescence, Super Resolution Microscopy subtype	
+		imagingTemporalType			The type of temporal acquisition: end-point is only data acquisition at one time point dynamic at more than one timepoints.	string or CV		1	MUST		end-point or dynamic	
+		imagingInterval		imagingTemporalType='dynamic'	The time elapsed between one image acquisition and the successive one.	double		1	MUST	CellMissy(Experiment.experimentInterval) 	10, 50.5	
+		imagingIntervalUnit		imagingTemporalType='dynamic'	The unit of measument of the interval.	string 		1	MUST	MIACME addition	ISO 8601 time interval: minutes, milliseconds	
+		timeFrames		imagingTemporalType='dynamic'	Number of imaging events in the time sequence. 	integer		1	MUST	CellMissy(Experiment.timeFrames), ranking		
+		objectiveType		objectiveType or (objectiveMagnification and objectiveNumericalAperture) = TRUE	Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view) 	string or CV		1	MUST		Olympus UPLSAPO 20x, Leica HI PLAN 4x/0.10, Nikon FI Plan Apo VC 60XWI	Objective names or acronymes are company specific (https://www.microscopyu.com/microscopy-basics/microscope-objective-specifications) and can be obtained from company sites e.g. http://www.olympus-lifescience.com/en/objectives/
+		objectiveMagnification		objectiveType or (objectiveMagnification and objectiveNumericalAperture) = TRUE	Linear magnification of the objective	integer 		1	MUST	CellMissy(Magnification.magnificationNumber)	10 (meaning 10x)	
+		objectiveNumericalAperture		objectiveType or (objectiveMagnification and objectiveNumericalAperture) = TRUE	Value that indicates the light acceptance angle of the objective ( determines the light gathering power, resolving power, and depth of  field of the objective).	double		1	MUST		0.75	
+		imagingAcquisitionChannelCount			The acquisition channel for the imaging protocol.	integer		1	MUST	Survey(MI44)		
+		reporterType			The type of the molecular entities used for direct imaging (e.g. dye) or indirect elements in the staining process (e.g.a histidine tag)	string or CV		1	MUST	Survey(MI45)	dye, labelled antibody, tag	
+		voxelSize			The size of the voxel (usually the same in the x and in y directions).	(double, double, double)		1	MUST	Descriptors ranking included pixelSize, here generalised to voxelSize.	0.73	Pixel size depends on the objective lens.
+		voxelSizeUnit			The unit of measurement of the voxel size.	string or CV		1	MUST	Descriptors ranking included pixelSizeUnit, here generalised to voxelSizeUnit.	µm, mm	
+		voxelConversionFactor			Factor to use to convert the voxel size into µm and viceversa.	(double, double, double)			MAY	CellMissy(Instrument.conversionFactor)		The conversion factor is different at each magnification. Usually, coversion factor at magnification 10x is used as a reference.
+		duration			The interval of time since the imaging process starts until it ends.	double		0..1	SHOULD	CellMissy		
+		lightIntensity			The acquisition light intensity.	double		0..1	MAY			
+		exposureTime			The acquisition time. 	double		0..1	MAY			
+		exposureTimeUnit			The unit of time measurement.	string or CV	Unit Ontology ()	0..1				
+		reporterSubcellularTarget			subcellular target visualized by Dye reporter	string or CV	GO (Gene Ontology), GO:cellular component; PRO (PRotein Ontology)	0..n	MAY		subcellular compartment, visualized cellular structure (nucleus, mitochondria), protein, DNA	
+		reporterName			name of Dye or ID	string or CV or database		0..n	MAY		DAPI, MitoTrackerGreen	
+		reporterChannel			color associated to dye				MAY		blue, green	
+												
+												
+Software 												
+		identifier			A primary identifier for the processing algorithm.							
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.							
+		name			A common known name for a specific image processing algorithm used. 	String		1..n	MUST			 
+		task			The task this algorithm is designed to perform.	String or CV		0..1	SHOULD		image pre-processing, filtering, cell segmentation, cell tracking	
+		publications			A reference to the algorithm, in the form of a publication (PUBMED ID or DOI).	Publication		0..n	SHOULD		https://www.ncbi.nlm.nih.gov/pubmed/?term=trackmate, 27713081	
+		code			A reference to the algorithm, ideally pointing to the source code (e.g. GitHub) for the specific version, which should have been assigned a DOI (e.g. with Zenodo). At a minimum, URL to source code or binaries.	URL or persistent identifier (DOI)		0..n	SHOULD			
+		version			The version of the algorithm. 	string		1				
+		licenses			The terms of use of the algorithm.	string or URL		0..n	SHOULD			
+		providers 			The person(s) or organization(s) that publish the algorithm.	Person or Organization		0..n	SHOULD			
+												
+DerivedData (extends Dataset)					Data derived from cell migration experiments.							
+		identifier										
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.							
+		scaleOfObservation			The scale at which cell migration has been recorded and therefore analyzed.	String		1	MUST		cell population, single-cell, cell organelles, cellular proteins	
+		variables			The variables measured.	String or CV		1..n	MUST		cell speed, directionality, measures of variance, migration or invasion efficiency, ....	
+		primaryData			The datasets that yield this derived data.	Dataset (ImageDataset being a subtype)		0..n	SHOULD		It includes the data derived by applying one or more ImageProcessingAlgorithms to rawImages, but also data from non-imaging-based assays, such as impedance from iCELLigence assay.	
+		algorithms			The algorithms applied to the image datasets to yield this derived data.	Software		0..n	SHOULD			
+		measurements 			The measurements obtained from the rawData.	Dataset		0..n	SHOULD 		impedance measurements	
+												
+												
+Dataset												
+		identifier			Primary identifier for the quantitation data.	string		0..1				
+		identifierSource			Information about the organisation or namespace responsible for creating and maintaining the identifier.	string		0..1				
+		name			The name of the quantitation data.	string		1	MUST 			
+		description			A textual narrative with details about the dataset	string		1	MUST 			
+		type			The type of measurement data.	string or CV		1	MUST 		area measurement in time (e.g. for wound healing) assay, x,y trajectories for single cell tracking studies, impedance in time for a iCelligence-based study	
+		values			A reference to the files containing the values.	string		0..n	MAY			
