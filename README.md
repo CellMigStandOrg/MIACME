@@ -15,7 +15,9 @@ The MIACME reporting guideline and its associated documentation is made availabl
 
 - [MIACME live spreadsheet - OPEN FOR COMMENTS](https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit?usp=sharing)
 
-### Version 0.1 
+### Version 0.1  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.260115.svg)](https://doi.org/10.5281/zenodo.260115)
+
 
 - [MIACME v0.1 specification](http://cellmigstandorg.github.io/MIACME/v0.1/spec/)
 - [MIACME v0.1 spreadsheet](https://docs.google.com/spreadsheets/d/1O-Mg2KbeWuU7Sx7hwyciXTAEA4WO1NwqzI-PnPuQDWc/edit#gid=0)
