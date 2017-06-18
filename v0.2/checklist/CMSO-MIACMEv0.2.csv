@@ -1,0 +1,105 @@
+Entity,Entity Annotation,Property,Property Annotation,Condition on Property,"Definition
+",Value Type,Recommended Ontology / Resource,Cardinality,Requirement Level,Evidence,Example(s),Notes
+An object that can exist independenty and can be identified uniquely.,An ontology concept that annotates the corresponding entity.,An attribute describing the corresponding entity.,An ontology concept that annotates the corresponding property.,The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).,"A statement of the exact meaning of the entity and/or property.
+",The type of a property value.,The recommended resources (e.g. ontology or database) that should be used to assigned the values for the corresponding Entity/Property pair.,The expected number of occurrences for a particular property.,"Following RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt), a word indicating the level of necessity for a particular property.
+","A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.","Typical cases for the values of a particular property.
+",Additional comments that may help the interpretation and representation of the corresponding entity and/or property.
+SECTION: Study,,,,,,,,,,,,
+,,,,,,,,,,,,
+Investigation,planned process,,,,A planned activity that involves one or more studies.,,,,,CellMissy schema (project),,
+,,identifier,,,"Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.",integer,,0..1,SHOULD,CellMissy schema (project.projectNumber),,
+,,identifierSource,,,Information about the organisation or namespace responsible for creating and maintaining the identifier.,string,,0..1,SHOULD,,,
+,,description,,,A textual narrative comprised of one or more statements about the investigation.,string,,1,MUST,CellMissy(project.description),,
+,,contacts,,,"The person(s) which contributed to the investigation, such as the Principal Investigator/corresponding author in publications or other researchers involved.",Person,,1..n,MUST,"CellMissy(user), Survey",,
+,,"studies
+",,,The studies associated with the Investigation.,Study,,1..n,MUST,,,
+,,publications,,,"Scholarly articles associated with the investigation, usually describing the methods applied and conclusions reached by the investigation.
+",Publication,,0..n,SHOULD,Survey,,
+,,acknowledges,,,The grant(s) which funded and supported the investigation.,Grant,,0..n,MAY,ISA experience,,
+,,conclusions,,,"A set of statements summarizing the findings of the investigation. It could be a URI referring to a nanopublication.
+",string or URL,,0..n,MAY,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Study,investigation,,,,"A planned activity that consists on study planning, study design execution,  documentation and which produces conclusion(s).
+",,,,,,,CellMissy includes 'magnification' as part of the experiment/study but in MIACME we include 'magnification' as a property of the instrument and it is removed from a property of the Study.
+"in CellMissy, in vitro experiments only",,identifier,,,Primary identifier for the experiment.,integer,,"
+",MUST,,,
+,,description,investigation description,,A textual narrative comprised of one or more statements about the study.,string,,1,MUST,CellMissy(experiment.purpose),,
+,,type,,,"The type of study.
+","string or CV
+",,1,MUST,http://onlinelibrary.wiley.com/doi/10.1034/j.1600-0854.2002.30105.x/epdf  and https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4602067/,"xy or 2D migration+end-point; xyz:3D migration (focal planes + end-point; xyt 2D migration in time (either time-lapse or discrete time points), xyzt, xyC (C channels, spectral measurements); 5D concept",
+,,contacts,,,"The person(s) which contributed to the study, such as the Principal Investigator/corresponding author in publications or other researchers involved.",Person,,1..n,MUST,"CellMissy(user), Survey",,
+,,experimentalSetup,,,The experimental setup of this study,ExperimentalSetup,,1..n,MUST,CellMissy(PlateCondition),,Need to agree on the name: experimental condition?
+,,imagingCondition,,,The setting used for imaging.,ImagingCondition,,1..n,,,,
+,,data,,,The data generated in this study.,Data,,0..n,SHOULD,,,
+,,dates,,,"Dates relevant to the study. 
+",Date,,0..n,SHOULD,CellMissy(experiment.experimentDate),"start date, publication date",
+,,publications,,,"Scholarly articles associated with the investigation, usually describing the methods applied and conclusions reached by the investigation.
+",Publication,,0..n,SHOULD,Survey,,
+,,acknowledges,,,The grant(s) which funded and supported the investigation.,Grant,,0..n,MAY,ISA experience,,
+,,conclusions,,,"A set of statements summarizing the findings of the study. It could be a URI referring to a nanopublication.
+",string or URL,,0..n,MAY,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Date,,,,,A date,,,,,,,
+,,date,,,A string representing a date.,string compliant with ISO8601,,1,MUST,,,
+,,type,,,The type of date.,,,1,MUST,,"publication date, release date",
+,,,,,,,,,,,,
+Person,,,,,A human being.,,,,,,,
+,,identifier,,,"A persistent identifier of the person, it should be an ORCID",string,,1,MUST,,,
+,,identifierSource,,,Information about the organisation or namespace responsible for creating and maintaining the identifier.,string,,1,MUST,,,
+,,email,,,The email address.,string,,1..n,SHOULD,,,
+,,firstName,,,The given name.,string,,1,MAY,,,
+,,lastName,,,The family name.,string,,1,MAY,,,
+,,affiliations,,,The organizations to which the person is associated with.,"Organization
+",,0..n,MAY,,,
+,,roles,,,The roles assumed by the person. Ideally from a controlled vocabulary or ontology.,string or CV,,0..n,MAY,,,
+,,,,,,,,,,,,
+Publication,,,,,"An article, report, or generally a document describing the study.",,,,,,,
+,,identifier,,,"A persistent identifier for the publication, it should be a DOI or pubmed identifier",string or URL,,1,MUST,,,
+,,identifierSource,,,Information about the organisation or namespace responsible for minting the identifier.,string,,0..1,SHOULD,,,
+,,title,,,The title of the publication.,string,,0..1,SHOULD,,,
+,,publicationVenue,,,"The venue where the publication appears (journal, publishing platform etc).",string,,0..1,SHOULD,,,
+,,authors,,,The list of authors that appear on the publication.,Person,,0..n,SHOULD,,,
+,,date,,,publication date,Date[type='publication'],,0..1,SHOULD,,,
+,,,,,,,,,,,,
+Grant,,,,,An allocated sum of funds given by a government or other organization for a particular purpose.,,,,,,,
+,,identifier,,,Primary identifier for the grant.,string,,0..1,SHOULD,,,
+,,identifierSource,,,Information about the organisation or namespace responsible for creating and maintaining the identifier.,string,,0..1,SHOULD,,,
+,,name,,,The name of the grant and its funding program.,string,,1,MUST,,,
+,,funders,,,The person(s) or organization(s) which has awarded the funds supporting the project.,(Person or Organization) and role funder,,1..n,MUST,,,
+,,,,,,,,,,,,
+Organization,,,,,Legal or physical entity corresponding to a business or administration,,,,,,,
+,,identifier,,,Primary identifier for the organisation.,,"For funders, fundref",,,,,
+,,identifierSource,,,Information about the organisation or namespace responsible for minting the identifier.,string,,0..1,SHOULD,,,
+,,name,,,The name of the organization.,string,,1,MUST,,University of Oxford,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+SECTION: Experimental Setup,,,,,,,,,,,,
+ExperimentalSetup,,,,,,,,,,,,
+,,assayType,,,,string or CV,,,MUST,,"single-cell migration, collective cell migration, developmental assay, 
+immune response, chemotaxic, microfluidic, wound-healing, spheroid",
+,,interference,,,,,,,MUST,,"(RNAi, gene construct, chemicals, serum, substrate stiffness) or specific protein",
+,,microenvironmentSubstrate,,mutually exclusive,,,,,MUST (one of them),,"glass, plastic, ECM, gel
+collagen, fribronecting",
+,,microenvironmentTissue,,,,,,,,,"mouse, dermis, zebrafish, embryo",
+,,cellType,,,The kind of cells used in the experiment.,,,,MUST,,"cell line, primary cell, endogenous cell",
+,,medium,,,The medium in which cell migration is assayed.,,,,MAY,,"EGF, HGF",
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+SECTION: ImagingCondition,,,,,,,,,,,,
+ImagingCondition,,,,,,,,,,,,
+,,imagingModality,,,The type of equipment or probes used to acquire images.,string or CV,,,MUST,,"confocal microscopy, spinning disk, wide-field, multi-photon, light-sheet, super-resolution, phase-contrast",
+,,temporalResolution,,,The precision of cell migration measurements with respect to time.,string or CV,,,MUST,,endpoint or time-lapse,
+,,duration,,if temporalResolution=time lapse,The interval of time since the imaging process starts until it ends.,,,,"MUST, if condition is true",,36 hours,
+,,frequency,,if temporalResolution=time lapse,,,,,"MUST, if condition is true",,10 minutes,
+,,channelReadout,,,,,,,MUST,,,
+,,objective,,,"Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)",string or CV,,,MAY,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+SECTION: Data,,,,,,,,,,,,
+Data,,,,,,,,,,,,
+,,rawImages,,,The set of raw images produced by the study.,link(s) to file(s),,,MAY,,,
+,,numberOfRawImages,,,The number of raw images.,integer,,,,,,
+,,processedImages,,,The set of processed images produced by the study.,link(s) to file(s),,,MAY,,"filtered images, deconvoluted images, masked images, images with tracks overlay, traction flow, PIV flow fields",
+,,extractedFeatures,,,The set of extracted features produced by the study.,link(s) to file(s),,,MAY,,"trajectories (x, y, t), derived quantities like cell speed, persistence of motion, shape features (cell area, cell solidity, cell perimeter…)",
