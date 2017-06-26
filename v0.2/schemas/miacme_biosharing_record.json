@@ -1,0 +1,12 @@
+{
+  "bioSharingID": "https://biosharing.org/bsg-s0006427",
+  "abbreviation": "MIACME",
+  "version" : "0.2",
+  "fullName": "Minimum Information About a Cell Migration Experiment",
+  "generalInformation": "",
+  "homepage": "http://www.fged.org/projects/miame/",
+  "developedIn": [],
+  "createdIn": 2017,
+  "taxonomicRange": ["All"],
+  "domains": []
+}

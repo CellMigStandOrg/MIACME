@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "MIACA (Minimum Information about a Cellular Assay) schema",
+  "id": "http://localhost:8080/schemas/miaca_schema.json",
+  "description": "JSON-schema representing MIACA reporting guideline.",
+  "type": "object",
+  "properties": {
+    "experimental_setup": {
+      "$ref": "experimental_setup_schema.json#"
+    },
+    "imaging_condition": {
+      "$ref": "imaging_condition_schema.json#"
+    },
+    "data": {
+      "$ref": "data_schema.json#"
+    }
+  }
+}
