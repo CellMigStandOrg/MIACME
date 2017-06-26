@@ -10,6 +10,16 @@
     "identifierSource" : { "type" : "string" },
     "title" : { "type" : "string"},
     "description" : { "type" : "string"},
+    "type" : { "type" : "string"},
+    "experimental_setup": {
+      "$ref": "experimental_setup_schema.json#"
+    },
+    "imaging_condition": {
+      "$ref": "imaging_condition_schema.json#"
+    },
+    "data": {
+      "$ref": "data_schema.json#"
+    },
     "contacts" : {
       "type" : "array",
       "items" : {

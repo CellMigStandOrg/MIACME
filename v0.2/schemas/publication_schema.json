@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Publication as JSON schema",
+  "description": "A schema describing a publication.",
+  "id" : "http://localhost:8080/schemas/publication_schema.json",
+  "type": "object",
+  "definitions" :{
+    "doi": {
+      "description": "a digital object identifier",
+      "type": "string"
+    },
+    "pmid": {
+      "description": "a pubmed object identifier",
+      "type": "string",
+      "pattern": "^pmid:[0-9]"
+    }
+  },
+  "properties": {
+    "identifier" : {
+      "type" : "object",
+      "@type": { "type": "string", "enum": [ "Identifier" ]}  ,
+      "anyOf": [
+        { "$ref": "#/definitions/doi" },
+        { "$ref": "#/definitions/pmid" }
+      ]
+    },
+    "identifierSource": {
+      "type": "string"
+    },
+    "title": {
+      "description" : "the title of the article, document or publication",
+      "type" : "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "$ref": "person_schema.json#"
+      }
+    },
+    "venue" :{
+      "description" : "Name of the publication venue.",
+      "type" : "string"
+    }
+  }
+}
