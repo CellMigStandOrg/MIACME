@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title" : "MIACME person schema",
+  "version" : "0.2",
+  "description" : "JSON-schema representing a person in MIACME",
+  "type" : "object",
+  "properties" : {
+    "@id": { "type": "string", "format": "uri" },
+    "lastName" : { "type" : "string"},
+    "firstName" : { "type" : "string"},
+    "midInitials" : { "type" : "string" },
+    "email" : { "type" : "string", "format" : "email"},
+    "phone" : { "type": "string"},
+    "fax" : { "type" : "string" },
+    "address" : { "type" : "string" },
+    "affiliation" : { "type" : "string" },
+
+    "affiliation" : {
+      "type": "array",
+      "items": {
+        "$ref": "comment_schema.json#"
+      }
+    }
+  },
+  "additionalProperties": false
+}

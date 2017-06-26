@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title" : "MIACME investigation schema",
+  "version" : "0.2",
+  "description" : "JSON-schema representing an investigation in MIACME",
+  "type" : "object",
+  "properties" : {
+    "@id": { "type": "string", "format": "uri" },
+    "identifier" : { "type" : "string" },
+    "identifierSource" : { "type" : "string" },
+    "title" : { "type" : "string"},
+    "description" : { "type" : "string"},
+    "contacts" : {
+      "type" : "array",
+      "items" : {
+        "$ref": "person_schema.json#"
+
+      }
+    },
+    "studies" : {
+      "type" : "array",
+      "items" : {
+        "$ref": "study_schema.json#"
+
+      }
+    },
+    "publications" : {
+      "type" : "array",
+      "items" : {
+        "$ref": "publication_schema.json#"
+
+      }
+    },
+    "acknowledges" : {
+      "type": "array",
+      "items": {
+        "$ref": "grant_schema.json#"
+      }
+    },
+    "conclusions" : {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
