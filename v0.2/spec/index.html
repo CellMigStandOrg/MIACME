@@ -76,9 +76,15 @@
                 },
                 "Taylor2008":{
                     title: "Promoting coherent minimum reporting guidelines for biological and biomedical investigations: the MIBBI project",
-                    href: "http://dx.doi.org/10.1038/nbt.1411",
+                    href: "http://doi.org/10.1038/nbt.1411",
                     publisher: "Nature Biotechnology",
                     authors: ["Chris F Taylor", "et al"]
+                },
+                "Wilkinson2016": {
+                    title: "The FAIR Guiding Principles for scientific data management and stewardship",
+                    href: "http://doi.org/10.1038/sdata.2016.18",
+                    publisher: "Scientific Data",
+                    authors: ["Mark D Wilkinson", "et al"]
                 }
             }
         };
@@ -92,15 +98,17 @@
         <a href="http://cordis.europa.eu/project/rcn/193270_en.html">European Commission's H2020 programme</a>.
     </p>
     <p>
-        This document introduces MIACME v0.2 that is a checklist, or list of elements, for the minimal description of cell migration experiments with focus on in vitro experiments. The document and checklist are open for comments.
+        This document introduces MIACME v0.2, which is a checklist, or list of elements, for the minimal description of cell migration experiments with focus on in vitro experiments.
+        The document and checklist are open for comments.
     </p>
     <p>
         MIACME v0.2 is the second version of MIACME checklist. For information about the previous version, please visit the <a href="http://cellmigstandorg.github.io/MIACME/v0.1/spec/">MIACME v0.1 specification</a>.
     </p>
     <p>
-        MIACME is expected to undergo a refinement process, through which it will be improved and extended, e.g. to include in vivo experiments. The CMSO will engage all the relevant stakeholders in the cell migration community in
-        order to reach agreement on the minimal descriptors required to understand, interpret, evaluate, replicate and disseminate cell migration experiments. MIACME goal is to make the data produced in cell migration experiments
-        FAIR (Findable Accessible Interoperable and Reusable) and to promote data access, data discovery, data preservation, maximise data re-use and repurpose through efficient annotation for long term archiving, and ultimately,
+        During development, MIACME is expected to undergo a refinement process, through which it will be improved and extended and tested against the representation of specific cell migration experiments.
+        The CMSO will engage all the relevant stakeholders in the cell migration community in order to reach agreement on the minimal descriptors required to understand, interpret, evaluate, replicate
+        and disseminate cell migration experiments. MIACME's goal is to make the data produced in cell migration experiments FAIR (Findable Accessible Interoperable and Reusable)[[Wilkinson2016]]
+        and to promote data access, data discovery, data preservation, maximise data re-use and repurpose through efficient annotation for long term archiving, and ultimately,
         enable reproducibility of cell migration experiments.
     </p>
 </section>
@@ -129,7 +137,8 @@
                 <li>participate in the <a href="https://cmso.science/meetings/">Cell Migration Standardization Organization workshops</a></li>
                 <li>report issues in our <a href="https://github.com/CellMigStandOrg/MIACME/issues">issues tracker</a></li>
                 <li>contact the Working Group via e-mail at: <a href="mailto:wg1-cmso-minimalrequirements@vib-ugent.be">wg1-cmso-minimalrequirements@vib-ugent.be</a></li>
-                <li>provide comments in the <a href="https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit#gid=0">MIACME live spreadsheet</a> detailing the elements of the reporting guideline</li>
+                <li>provide comments in the <a href="https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit#gid=0">MIACME live spreadsheet</a> detailing
+                    the elements of the reporting guideline</li>
                 <li>share your experiments details and datasets to use as examples of MIACME representations</li>
             </ul>
 
@@ -167,8 +176,8 @@
 
     <p>
         MIACME comprises a checklist, or list of elements, for the minimal description of cell migration experiments.
-        This release, version 0.2, focuses on in vitro experiments as v0.1 did. In comparison to the previous version,
-        MIACME v0.2 provides a simplification of the descriptors.
+        This release, version 0.2, is the result of discussions in the community and a simplification of MIACME v0.1. after identifying
+        the main descriptors for reporting cell migration experiments.
     </p>
 
     <p>
@@ -207,7 +216,7 @@
 
     <p> MIACME v0.2 spreadsheet can be viewed here:
     <br>
-    <iframe src="https://docs.google.com/spreadsheets/d/1O-Mg2KbeWuU7Sx7hwyciXTAEA4WO1NwqzI-PnPuQDWc/pubhtml" frameborder="0" width="800px" height="600px"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/19nAnRx4rtOw0AJBMLTbW4nrhYUhrwvtiEY70Xp_rO88/edit?usp=drive_web" frameborder="0" width="800px" height="600px"></iframe>
     <br>
     </p>
 
@@ -229,6 +238,14 @@
         <li>Example(s): Typical cases for the values of a particular property.</li>
         <li>Notes: Additional comments that may help the interpretation and representation of the corresponding entity and/or property.</li>
     </ul>
+    </p>
+
+    <p>
+        We have split the spreadsheet in two worksheets:
+        <ol>
+            <li>A worksheet with the three main sections defined for describing cell migration experiments</li>
+            <li>A worksheet with more generic elements for describing the experiment and related entities, such as investigation, study, contacts, publications.</li>
+        </ol>
     </p>
 
     <p>
