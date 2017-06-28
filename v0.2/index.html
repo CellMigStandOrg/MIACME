@@ -133,14 +133,14 @@
             We welcome and appreciate contributions. To make comments regarding this document and/or the associated reporting guideline,
             participation is possible in a variety of ways:
 
-            <ul>
-                <li>participate in the <a href="https://cmso.science/meetings/">Cell Migration Standardization Organization workshops</a></li>
-                <li>report issues in our <a href="https://github.com/CellMigStandOrg/MIACME/issues">issues tracker</a></li>
-                <li>contact the Working Group via e-mail at: <a href="mailto:wg1-cmso-minimalrequirements@vib-ugent.be">wg1-cmso-minimalrequirements@vib-ugent.be</a></li>
-                <li>provide comments in the <a href="https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit#gid=0">MIACME live spreadsheet</a> detailing
-                    the elements of the reporting guideline</li>
-                <li>share your experiments details and datasets to use as examples of MIACME representations</li>
-            </ul>
+        <ul>
+            <li>participate in the <a href="https://cmso.science/meetings/">Cell Migration Standardization Organization workshops</a></li>
+            <li>report issues in our <a href="https://github.com/CellMigStandOrg/MIACME/issues">issues tracker</a></li>
+            <li>contact the Working Group via e-mail at: <a href="mailto:wg1-cmso-minimalrequirements@vib-ugent.be">wg1-cmso-minimalrequirements@vib-ugent.be</a></li>
+            <li>provide comments in the <a href="https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit#gid=0">MIACME live spreadsheet</a> detailing
+                the elements of the reporting guideline</li>
+            <li>share your experiments details and datasets to use as examples of MIACME representations</li>
+        </ul>
 
         </p>
 
@@ -153,7 +153,7 @@
 </section>
 
 <section>
-    <h2 id="introduction">Introduction</h2>
+    <h2 id="background">Background</h2>
 
     <p>
         Reporting guidelines, or minimum information checklists, have been proposed as a way to understand the context, methods,
@@ -171,130 +171,128 @@
 
 </section>
 
-<p>
+<section>
+
     <h2 id="miacme">MIACME Reporting Guideline</h2>
 
-    <p>
-        MIACME comprises a checklist, or list of elements, for the minimal description of cell migration experiments.
-        This release, version 0.2, is the result of discussions in the community and a simplification of MIACME v0.1. after identifying
-        the main descriptors for reporting cell migration experiments.
-    </p>
+<p>
+    MIACME comprises a checklist, or list of elements, for the minimal description of cell migration experiments.
+    This release, version 0.2, is the result of discussions in the community and a simplification of MIACME v0.1. after identifying
+    the main descriptors for reporting cell migration experiments.
+</p>
 
-    <p>
-        MIACME v0.2 identified three main sections for the description of cell migration experiments:
-        <ol>
-            <li>Experimental setup: identifying the main elements of the experiment such as the type of assay, the perturbation or interference applied, the microenvironment (substrat for in vitro experiments or tissue for in vivo experiments), the cell type and, optionally, the medium.</li>
-            <li>Imaging condition: describing the imaging modality, the temporal resolution, a description of the different imaging channels and, optionally, the objective lesn.</li>
-            <li>Data: providing information about the raw or processed images, the total number of raw images and extracted features, when available.</li>
-        </ol>
-    </p>
+<p>
+    MIACME v0.2 identified three main sections for the description of cell migration experiments:
+<ol>
+    <li>Experimental setup: identifying the main elements of the experiment such as the type of assay, the perturbation or interference applied, the microenvironment (substrat for in vitro experiments or tissue for in vivo experiments), the cell type and, optionally, the medium.</li>
+    <li>Imaging condition: describing the imaging modality, the temporal resolution, a description of the different imaging channels and, optionally, the objective lesn.</li>
+    <li>Data: providing information about the raw or processed images, the total number of raw images and extracted features, when available.</li>
+</ol>
+</p>
 
 
-    <p>
-        These high-level sections and entities for MIACME v0.2 are shown here:
-        <figure>
-            <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/MIACME_0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
-            <figcaption>A diagram showing the main elements of MIACME v0.2 (also available as a <a href="https://docs.google.com/drawings/d/1ncrQthxAMoyoRw3-aRpurcsIu2pjrguV0llunNsG2q8/edit">Google document</a></figcaption>
-        </figure>
-    </p>
+<p>
+    These high-level sections and entities for MIACME v0.2 are shown here:
+    <figure>
+        <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/MIACME_0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
+        <figcaption>A diagram showing the main elements of MIACME v0.2 (also available as a <a href="https://docs.google.com/drawings/d/1ncrQthxAMoyoRw3-aRpurcsIu2pjrguV0llunNsG2q8/edit">Google document</a>)</figcaption>
+    </figure>
+</p>
 
-    <p>
-        The elements are presented as entities and properties, together with their definitions, their cardinality and
-        requirement level, as well as recommended sources for their annotation, examples and notes.
-        Defining this common set of metadata to guide researchers in reporting scientific context is important for
-        data repositories, journals and funders in the cell migration domain.
-    </p>
+<p>
+    The elements above are also presented in a more detailed form, as entities and properties, together with their definitions, their cardinality and
+    requirement level, as well as recommended sources for their annotation, examples and notes.
+    Defining this common set of metadata to guide researchers in reporting scientific context is important for
+    data repositories, journals and funders in the cell migration domain.
+</p>
 
-    <p>
-        The development of MIACME follows an iterative process. MIACME v2.0 was derived as a revision of MIACME v1.0, based on input from:
-        <ul>
-            <li>discussions and notes from <a href="https://cmso.science/meetings/cmso-workshop-27th-and-28th-of-january-2017-galveston-texas/">the
-            second CMSO workshop</a></li>
-            <li>identifying the descriptors for specific experiments</li>
-            <li>Minimal information requirements working group discussions</li>
-        </ul>
-    </p>
-
-    <p>
-        MIACME v0.1 was derived by considering discussions among participants in the working group and multiple sources, such as:
-        <ul>
-        <li>discussions and notes from the <a href="https://cmso.science/meeting-2-3-march-2016/">CMSO Inaugural Workshop</a>, including:
-            <ul>
-                <li><a href="http://tiny.cc/miacme-ranking">Ranking of initial set of MIACME descriptors</a></li>
-                <li><a href="http://tiny.cc/miacme-survey">MIACME Survey</a></li>
-            </ul>
-        </li>
-        <li><a href="http://genesis.ugent.be/uvpublicdata/cellmissy/cellmissySchema.xsd">CellMissy XML Schema</a></li>
-        <li><a href="http://genesis.ugent.be/uvpublicdata/cellmissy/cellmissy_schema_1.0.4.sql">CellMissy Tool SQL schema</a></li>
-        </ul>
-
-</ul>
-
-    </p>
-
-    <p> MIACME v0.2 spreadsheet can be viewed here:
+<p> MIACME v0.2 spreadsheet can be viewed here:
     <br>
     <iframe src="https://docs.google.com/spreadsheets/d/19nAnRx4rtOw0AJBMLTbW4nrhYUhrwvtiEY70Xp_rO88/edit?usp=drive_web" frameborder="0" width="800px" height="600px"></iframe>
     <br>
-    </p>
+</p>
 
-    <p>
-        The spreadsheet contains the following information:
+<p>
+    The spreadsheet contains the following information:
 
-    <ul>
-        <li>Entity: An object that can exist independently and can be identified uniquely.</li>
-        <li>Entity Annotation: An ontology concept that annotates the corresponding entity.</li>
-        <li>Property: An attribute describing the corresponding entity.</li>
-        <li>Property Annotation:  An ontology concept that annotates the corresponding property.</li>
-        <li>Condition on Property: The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).</li>
-        <li>Definition: A statement of the exact meaning of the entity and/or property.</li>
-        <li>Value Type: The type of a property value.</li>
-        <li>Recommended resource: The recommended resources (e.g. ontology or database) that should be used to assign the values for the corresponding Entity/Property pair.</li>
-        <li>Cardinality: The expected number of occurrences for a particular property.</li>
+<ul>
+    <li>Entity: An object that can exist independently and can be identified uniquely.</li>
+    <li>Entity Annotation: An ontology concept that annotates the corresponding entity.</li>
+    <li>Property: An attribute describing the corresponding entity.</li>
+    <li>Property Annotation:  An ontology concept that annotates the corresponding property.</li>
+    <li>Condition on Property: The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).</li>
+    <li>Definition: A statement of the exact meaning of the entity and/or property.</li>
+    <li>Value Type: The type of a property value.</li>
+    <li>Recommended resource: The recommended resources (e.g. ontology or database) that should be used to assign the values for the corresponding Entity/Property pair.</li>
+    <li>Cardinality: The expected number of occurrences for a particular property.</li>
     <li>Requirement level: Following <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>, a word indicating the level of necessity for a particular property.</li>
-        <li>Evidence: A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.</li>
-        <li>Example(s): Typical cases for the values of a particular property.</li>
-        <li>Notes: Additional comments that may help the interpretation and representation of the corresponding entity and/or property.</li>
-    </ul>
-    </p>
+    <li>Evidence: A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.</li>
+    <li>Example(s): Typical cases for the values of a particular property.</li>
+    <li>Notes: Additional comments that may help the interpretation and representation of the corresponding entity and/or property.</li>
+</ul>
+</p>
 
-    <p>
-        We have split the spreadsheet in two worksheets:
-        <ol>
-            <li>A worksheet with the three main sections defined for describing cell migration experiments</li>
-            <li>A worksheet with more generic elements for describing the experiment and related entities, such as investigation, study, contacts, publications.</li>
-        </ol>
-    </p>
+<p>
+    We have split the spreadsheet in two worksheets:
+<ol>
+    <li>A worksheet with the three main sections defined for describing cell migration experiments</li>
+    <li>A worksheet with more generic elements for describing the experiment and related entities, such as investigation, study, contacts, publications.</li>
+</ol>
+</p>
 
-    <p>
-        The following figure provides an overview of MIACME entities, their relationships and cardinalities:
-        <figure>
-            <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/CMSO-MIACME-v0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
-            <figcaption>A diagram representing MIACME entities, their relationships and cardinalities.</figcaption>
-        </figure>
+<p>
+    The following figure provides an overview of MIACME entities, their relationships and cardinalities:
+    <figure>
+        <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/CMSO-MIACME-v0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
+        <figcaption>A diagram representing MIACME entities, their relationships and cardinalities.</figcaption>
+    </figure>
 
-    </p>
-    <p>
-        The top part of the figure includes the generic elements to describe entities such as investigations and studies, contact people, organisations, grants.
-        The bottom part show the three specific sections for cell migration experiments: experimental setup, imaging condition and data.
-    </p>
+</p>
+<p>
+    The top part of the figure includes the generic elements to describe entities such as investigations and studies, contact people, organisations, grants.
+    The bottom part show the three specific sections for cell migration experiments: experimental setup, imaging condition and data.
+</p>
 
-    <p>
-        During the second CMSO workshop in Galveston, USA, the working group members analysed MIACME v0.1 and determined that some elements identified
-        could be excluded as required descriptors by focusing ondifferences between MIACME v0.1 and v0.2 revolve around a simplification of the entities selected
-        <figure>
-            <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/RelationMIACMEv0.1-v0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
-            <figcaption>A diagram comparing MIACME v0.2 with MIACME v0.1. (also available as a <a href="https://docs.google.com/drawings/d/1qY_nJkpg3L-HutUKfjfRVPPoBCg0QVbICqu76a_L_sQ/edit">Google document</a></figcaption>
-        </figure>
-    </p>
+<p>
+    In addition to identifying the minimum set of descriptors for cell migration experiments, the working group worked on examples.
+</p>
 
-    <p>
 
-    </p>
+<p>
+    During the second CMSO workshop in Galveston, USA, the working group members analysed MIACME v0.1 and determined that some elements identified
+    could be excluded as required descriptors by focusing ondifferences between MIACME v0.1 and v0.2 revolve around a simplification of the entities selected
+    <figure>
+        <img src="https://github.com/CellMigStandOrg/MIACME/blob/master/v0.2/figures/RelationMIACMEv0.1-v0.2.jpg?raw=true" alt="MIACME v0.2" style="width:700px;">
+        <figcaption>A diagram comparing MIACME v0.2 with MIACME v0.1. (also available as a <a href="https://docs.google.com/drawings/d/1qY_nJkpg3L-HutUKfjfRVPPoBCg0QVbICqu76a_L_sQ/edit">Google document</a>)</figcaption>
+    </figure>
+</p>
 
-    <p>
-        In addition to identifying the minimum set of descriptors for cell migration experiments, the workin group worked on examples.
-    </p>
+<p>
+    The development of MIACME follows an iterative process. MIACME v2.0 was derived as a revision of MIACME v1.0, based on input from:
+<ul>
+    <li>discussions and notes from <a href="https://cmso.science/meetings/cmso-workshop-27th-and-28th-of-january-2017-galveston-texas/">the
+        second CMSO workshop</a></li>
+    <li>identifying the descriptors for specific experiments</li>
+    <li>Minimal information requirements working group discussions</li>
+</ul>
+</p>
+
+<p>
+    MIACME v0.1 was derived by considering discussions among participants in the working group and multiple sources, such as:
+<ul>
+    <li>discussions and notes from the <a href="https://cmso.science/meeting-2-3-march-2016/">CMSO Inaugural Workshop</a>, including:
+        <ul>
+            <li><a href="http://tiny.cc/miacme-ranking">Ranking of initial set of MIACME descriptors</a></li>
+            <li><a href="http://tiny.cc/miacme-survey">MIACME Survey</a></li>
+        </ul>
+    </li>
+    <li><a href="http://genesis.ugent.be/uvpublicdata/cellmissy/cellmissySchema.xsd">CellMissy XML Schema</a></li>
+    <li><a href="http://genesis.ugent.be/uvpublicdata/cellmissy/cellmissy_schema_1.0.4.sql">CellMissy Tool SQL schema</a></li>
+</ul>
+
+</p>
+
+
 
 </section>
 
