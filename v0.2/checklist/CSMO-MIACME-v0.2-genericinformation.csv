@@ -4,11 +4,12 @@ An object that can exist independenty and can be identified uniquely.,An ontolog
 ",The type of a property value.,The recommended resources (e.g. ontology or database) that should be used to assigned the values for the corresponding Entity/Property pair.,The expected number of occurrences for a particular property.,"Following RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt), a word indicating the level of necessity for a particular property.
 ","A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.","Typical cases for the values of a particular property.
 ",Additional comments that may help the interpretation and representation of the corresponding entity and/or property.
-SECTION: Study,,,,,,,,,,,,
+SECTION: Investigation/Study,,,,,,,,,,,,
 ,,,,,,,,,,,,
 Investigation,planned process,,,,A planned activity that involves one or more studies.,,,,,CellMissy schema (project),,
 ,,identifier,,,"Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.",integer,,0..1,SHOULD,CellMissy schema (project.projectNumber),,
 ,,identifierSource,,,Information about the organisation or namespace responsible for creating and maintaining the identifier.,string,,0..1,SHOULD,,,
+,,title,,,The title of the investigation.,string,,0..1,SHOULD,,,
 ,,description,,,A textual narrative comprised of one or more statements about the investigation.,string,,1,MUST,CellMissy(project.description),,
 ,,contacts,,,"The person(s) which contributed to the investigation, such as the Principal Investigator/corresponding author in publications or other researchers involved.",Person,,1..n,MUST,"CellMissy(user), Survey",,
 ,,"studies
@@ -24,6 +25,8 @@ Study,investigation,,,,"A planned activity that consists on study planning, stud
 ",,,,,,,CellMissy includes 'magnification' as part of the experiment/study but in MIACME we include 'magnification' as a property of the instrument and it is removed from a property of the Study.
 "in CellMissy, in vitro experiments only",,identifier,,,Primary identifier for the experiment.,integer,,"
 ",MUST,,,
+,,identifierSource,,,,,,,,,,
+,,title,,,,,,,,,,
 ,,description,investigation description,,A textual narrative comprised of one or more statements about the study.,string,,1,MUST,CellMissy(experiment.purpose),,
 ,,type,,,"The type of study.
 ","string or CV
@@ -59,7 +62,7 @@ Publication,,,,,"An article, report, or generally a document describing the stud
 ,,identifier,,,"A persistent identifier for the publication, it should be a DOI or pubmed identifier",string or URL,,1,MUST,,,
 ,,identifierSource,,,Information about the organisation or namespace responsible for minting the identifier.,string,,0..1,SHOULD,,,
 ,,title,,,The title of the publication.,string,,0..1,SHOULD,,,
-,,publicationVenue,,,"The venue where the publication appears (journal, publishing platform etc).",string,,0..1,SHOULD,,,
+,,venue,,,"The venue where the publication appears (journal, publishing platform etc).",string,,0..1,SHOULD,,,
 ,,authors,,,The list of authors that appear on the publication.,Person,,0..n,SHOULD,,,
 ,,date,,,publication date,Date[type='publication'],,0..1,SHOULD,,,
 ,,,,,,,,,,,,
@@ -73,33 +76,3 @@ Organization,,,,,Legal or physical entity corresponding to a business or adminis
 ,,identifier,,,Primary identifier for the organisation.,,"For funders, fundref",,,,,
 ,,identifierSource,,,Information about the organisation or namespace responsible for minting the identifier.,string,,0..1,SHOULD,,,
 ,,name,,,The name of the organization.,string,,1,MUST,,University of Oxford,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-SECTION: Experimental Setup,,,,,,,,,,,,
-ExperimentalSetup,,,,,,,,,,,,
-,,assayType,,,,string or CV,,,MUST,,"single-cell migration, collective cell migration, developmental assay, 
-immune response, chemotaxic, microfluidic, wound-healing, spheroid",
-,,interference,,,,,,,MUST,,"(RNAi, gene construct, chemicals, serum, substrate stiffness) or specific protein",
-,,microenvironmentSubstrate,,mutually exclusive,,,,,MUST (one of them),,"glass, plastic, ECM, gel
-collagen, fribronecting",
-,,microenvironmentTissue,,,,,,,,,"mouse, dermis, zebrafish, embryo",
-,,cellType,,,The kind of cells used in the experiment.,,,,MUST,,"cell line, primary cell, endogenous cell",
-,,medium,,,The medium in which cell migration is assayed.,,,,MAY,,"EGF, HGF",
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-SECTION: ImagingCondition,,,,,,,,,,,,
-ImagingCondition,,,,,,,,,,,,
-,,imagingModality,,,The type of equipment or probes used to acquire images.,string or CV,,,MUST,,"confocal microscopy, spinning disk, wide-field, multi-photon, light-sheet, super-resolution, phase-contrast",
-,,temporalResolution,,,The precision of cell migration measurements with respect to time.,string or CV,,,MUST,,endpoint or time-lapse,
-,,duration,,if temporalResolution=time lapse,The interval of time since the imaging process starts until it ends.,,,,"MUST, if condition is true",,36 hours,
-,,frequency,,if temporalResolution=time lapse,,,,,"MUST, if condition is true",,10 minutes,
-,,channelReadout,,,,,,,MUST,,,
-,,objective,,,"Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)",string or CV,,,MAY,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-SECTION: Data,,,,,,,,,,,,
-Data,,,,,,,,,,,,
-,,rawImages,,,The set of raw images produced by the study.,link(s) to file(s),,,MAY,,,
-,,numberOfRawImages,,,The number of raw images.,integer,,,,,,
-,,processedImages,,,The set of processed images produced by the study.,link(s) to file(s),,,MAY,,"filtered images, deconvoluted images, masked images, images with tracks overlay, traction flow, PIV flow fields",
-,,extractedFeatures,,,The set of extracted features produced by the study.,link(s) to file(s),,,MAY,,"trajectories (x, y, t), derived quantities like cell speed, persistence of motion, shape features (cell area, cell solidity, cell perimeter…)",
