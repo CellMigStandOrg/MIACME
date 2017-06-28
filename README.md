@@ -18,13 +18,15 @@ The MIACME reporting guideline and its associated documentation is made availabl
 ### Version 0.2
 
 - [MIACME v0.2 specification](http://cellmigstandorg.github.io/MIACME/v0.2/)
+- [MIACME v0.2 spreadsheet](https://docs.google.com/spreadsheets/d/19nAnRx4rtOw0AJBMLTbW4nrhYUhrwvtiEY70Xp_rO88/edit#gid=1464207348) (also available in through the repository)
+- [Slides with a status update on MIACME development and MIACME v0.2](https://www.slideshare.net/agbeltran/cmso-minimal-reporting-requirements)
 
 ### Version 0.1  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.260115.svg)](https://doi.org/10.5281/zenodo.260115)
 
 
 - [MIACME v0.1 specification](http://cellmigstandorg.github.io/MIACME/v0.1/spec/)
-- [MIACME v0.1 spreadsheet](https://docs.google.com/spreadsheets/d/1O-Mg2KbeWuU7Sx7hwyciXTAEA4WO1NwqzI-PnPuQDWc/edit#gid=0)
+- [MIACME v0.1 spreadsheet](https://docs.google.com/spreadsheets/d/1O-Mg2KbeWuU7Sx7hwyciXTAEA4WO1NwqzI-PnPuQDWc/edit#gid=0) (also available in through the repository)
 
 ## How to contribute
 
