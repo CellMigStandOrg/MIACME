@@ -161,7 +161,7 @@
         <field header="Comment[Study Status]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide the a textual description of the main findings of the study]]></description>
+            <description><![CDATA[The life cycle of the experiment: planned, ongoing, completed.]]></description>
             <default-value><![CDATA[completed]]></default-value>
             <list-values>planned,ongoing,completed</list-values>
         </field>        
