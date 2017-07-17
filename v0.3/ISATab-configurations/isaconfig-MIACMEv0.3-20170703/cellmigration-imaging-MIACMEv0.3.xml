@@ -23,8 +23,7 @@
             is-forced-ontology="false">
             <description><![CDATA[The type of microscopy used to acquire images.]]></description>
             <list-values>migration assay,Transwell migration assay,in-vitro wound healing assay,cell exclusion zone assay,fence assay,microcarrier bead assay,spheroid migration assay,capillary chamber migration assay,capillary tube assay,leukocyte migration agarose technique assay,single cell motility assay,cell tracking assay,invasion assay,Transwell invasion assay,Platypus invasion assay
-                3D cell tracking assay,gelatin degradation assay,vertical gel 3D migration,invasion assay,monodispersed cell invasion assay,spheroid confrontation assay,spheroid invasion assay</list-values>
-            <default-value/>
+                3D cell tracking assay,gelatin degradation assay,vertical gel 3D migration,invasion assay, monodispersed cell invasion assay,spheroid confrontation assay,spheroid invasion assay</list-values>
         </field>
         
         <field header="Parameter Value[imaging modality]" data-type="Ontology term"
