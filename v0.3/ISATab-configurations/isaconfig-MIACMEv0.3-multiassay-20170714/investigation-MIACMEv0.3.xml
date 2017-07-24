@@ -149,19 +149,19 @@
         <field header="Study Identifier" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Study Identifier]]></description>
+            <description><![CDATA[Primary identifier for the experiment/study.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Study Title" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Study Title]]></description>
+            <description><![CDATA[A short sentence naming the study.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Study Description" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Study Description]]></description>
+            <description><![CDATA[A textual narrative comprised of one or more statements about the study.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Study Submission Date" data-type="String" is-file-field="false"
