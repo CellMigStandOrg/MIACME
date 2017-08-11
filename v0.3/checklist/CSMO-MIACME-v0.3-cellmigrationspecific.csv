@@ -1,0 +1,67 @@
+"IF YOU HAVE FEEDBACK ON MIACME, PLEASE USE THE LIVE SPREADSHEET TO LEAVE COMMENTS, THANKS: http://tiny.cc/miacme-live",,,,,,,,,,,,
+Diagram for MIACME v0.3:  https://docs.google.com/drawings/d/1YbaJz8-pSfritiH64hz0fgwF_9idRhfA7xAt00HCRLc/edit,,,,,,,,,,,,
+Entity,Entity Annotation,Property,Property Annotation,Condition on Property,"Definition
+",Value Type,Recommended Ontology / Resource,Cardinality,Requirement Level,Evidence,Example(s),Notes
+An object that can exist independenty and can be identified uniquely.,An ontology concept that annotates the corresponding entity.,An attribute describing the corresponding entity.,An ontology concept that annotates the corresponding property.,The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).,"A statement of the exact meaning of the entity and/or property.
+",The type of a property value.,The recommended resources (e.g. ontology or database) that should be used to assigned the values for the corresponding Entity/Property pair.,The expected number of occurrences for a particular property.,"Following RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt), a word indicating the level of necessity for a particular property.
+","A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.","Typical cases for the values of a particular property.
+",Additional comments that may help the interpretation and representation of the corresponding entity and/or property.
+SECTION: Experimental Setup,,,,,,,,,,,,
+ExperimentalSetup,,,,,,,,,,,,
+,,basicApproach,,,"A description of the study type or approach used, such as in vitro, in vivo, in silico.",string or CV,,,MUST,,"in vitro, in vivo, in silico",
+,,cellModel,,,"A description of the cells used in the experiment.
+",CellModel,,,MUST,,,
+,,assay,,,"The migration/invasion assay for this investigation, and its specifications.",Assay,,,MUST,,"single-cell migration, collective cell migration, developmental assay, 
+immune response, chemotaxic, microfluidic, wound-healing, spheroid",
+,,treatment,,,The manipulation/perturbation of which the (migratory) effect is being tested.,Treatment,"ChEBI for compounds, PRO for specific proteins or targetted genes",,MUST,,"(RNAi, gene construct, chemicals, serum, substrate stiffness) or specific protein",
+,,microEnvironment,,,"The nature or components of the material surrounding/contacting the cells for which migration is tested, including substrate, ECM protein or synthetic counterpart, tissue, other cells or entire organism.",string or CV,,1..n,MUST,,"glass, plastic, ECM, gel collagen, fribronecting OR mouse, dermis, zebrafish, embryo",
+,,organism ,,if microEnvironment = tissue,"The organism corresponding to the microEnvironment, if it is a tissue.",string or CV,,0..n,MAY,NCBITaxon,,
+,,cellDetails,,,,string or CV,,,,"CL,CLO",,
+,OBI_0000079,medium,,"if basicApproach=in vitro, it must be provided","Solution used to provide nutritives and motility-assisting additives to migrating cells
+",string or CV,,,MAY,,"Epidermal Growth Factor (EGF) or motility assisted aditive (http://www.ebi.ac.uk/efo/EFO_0003298), Hepatocyte Growth Factor (HGF) (http://www.ebi.ac.uk/efo/EFO_0003303 ), DMEM (solution in definition: http://purl.obolibrary.org/obo/OBI_0000918))","This descriptor is only relevant for cells in some form of cell culture (in vitro or ex vivo, but not for in vivo)"
+,,,,,,,,,,,,
+CellModel,,,,,,,,,,,,
+,,cellType,,,The type of cell being used in the study.,string or CV,,1..n,MUST,"CL, CLO","cell line, primary cell, patient-derived cell, xenograft, organoid, synthetic cell",
+,,specificCellDetails,,,The specific details about the cell.,string or CV,,,MUST,"CL, CLO","HT1080 (EFO:0002059),  neutrophil (CL:0000775)",
+,,organism,,,The organism of origin of the cell.,string or CV,,,MUST,NCBITaxonomy,Homo Sapiens,
+,,,,,,,,,,,,
+Assay,,,,,,,,,,,,
+,,type,,,The kind of assay.,string or CV,OBI (after adding the specific terms),,MUST,,,
+,,cellInput,,,"The manner in which the cell population is presented at the start of the assay
+",string or CV,,,MUST,"CL, CLO","single cells, as a spheroid (a cell aggregate)  or as a confluent cell sheet,",
+,,,,,,,,,,,,
+Treatment,,,,,,,,,,,,
+,,agent,,,The nature of the perturbation/intervention/treatment being applied to the biological system.,string or CV,,1,MUST,,"RNAi, gene construct, chemical compound, serum, substrate stiffness",
+,,agentValues,,,The set of values that the treatment will assume.,string or CV,,1..n,MUST,,"if treatmentType=""chemical compound"", the values could be N-Formylmethionine Leucyl-Phenylalanine and Vehicle (control)",
+,,dose,,,,,,,MAY,,,
+,,doseValues,,,,,,,MAY,,,
+,,duration,,,,,,,MAY,,,
+,,durationValues,,,,,,,MAY,,,
+,,,,,,,,,,,,
+SECTION: ImagingCondition,,,,,,,,,,,,
+ImagingCondition,,,,,,,,,,,,
+,,modality,,,The type of microscopy used to acquire images.,string or CV,,1,MUST,,"confocal microscopy, spinning disk, wide-field, multi-photon, light-sheet, super-resolution, phase-contrast",
+,,imageSequenceType,,,Single or multiple imaging timepoints in the experiment. ,string or CV,,1,MUST,,endpoint or time-series,
+,,observationPeriod,,,"For time-series, it is the timespan since the imaging process starts until it ends. For endpoint, it is the timespan since the starting point until the image is taken.",real number,,1,"MUST, if condition is true",,36,
+,,observationPeriodUnit,,,The unit of the duration.,string or CV,"UO, branch corresponding time",1,,,"hours, minutes",
+,,timeSeriesInterval,,if imageSequenceType=time-series,The duration between two sequential frames of the time lapse series.,real number,,1,"MUST, if condition is true",,10,
+,,timeSeriesIntervalUnit,,if imageSequenceType=time-series,The unit of the timeLapseInterval,string or CV ,,1,,,minutes,
+,,channelDefinition,,,Identification of the label or constrasts,string,,1..n,MUST,,,
+,,objectiveLens,,,"Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)",string or CV,,0..1,MAY,,,
+,,numericalAperture,,,"Value that indicates the light acceptance angle of the objective (
+determines the light gathering power, resolving power, and depth of 
+field of the objective).",string,,0..1,MAY,,,
+,,pixelSize,,,The physical dimension of one picture element in your image.,real number,,1,MUST,,0.01,"for 3D tracking, it will be reconstructed"
+,,pixelSizeUnit,,,The unit of the pixel size.,string or CV,,1,MUST,,µm,
+,,,,,,,,,,,,
+SECTION: Data,,,,,,,,,,,,
+Data,,,,,,,,,,,,
+,,rawImages,,,The set of raw images produced by the study.,link(s) to file(s),,,MAY,,,
+,,numberOfRawImages,,,The number of raw images.,integer,,,MAY,,,
+,,rawImagesLicense,,,The terms of use of the raw images.,string or IRI,,,MAY,,,
+,,processedImages,,,The set of processed images produced by the study.,link(s) to file(s),,,MAY,,"filtered images, deconvoluted images, masked images, images with tracks overlay, traction flow, PIV flow fields",
+,,processedImagesLicense,,,The terms of use of the raw images.,string or IRI,,,MAY,,,
+,,extractedFeatures,,,The set of extracted features produced by the study.,link(s) to file(s),,,MAY,,"trajectories (x, y, t), derived quantities like cell speed, persistence of motion, shape features (cell area, cell solidity, cell perimeter…)",
+,,extractedFeaturesLicense,,,The terms of use of the raw images.,string or IRI,,,MAY,,,
+,,extractedFeaturesCurated,,,A descriptor to indicate if the the extracted features were curated.,string or IRI,,,MAY; MUST if extractedFeatures are present,,yes or no,
+,,extractedFeaturesCurationProcess,,,A free text description of what was the curation process applied.,string,,,MAY,,,
