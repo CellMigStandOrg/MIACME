@@ -112,10 +112,17 @@
             <description><![CDATA[Raw Data File]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        <protocol-field protocol-type="data transformation"/>
+        <field header="Data Transformation Name" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[User-defined name for each data transformation applied]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <field header="Derived Data File" data-type="String" is-file-field="false"
             is-multiple-value="true" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The set of processed images produced by the study OR The set of extracted features produced by the study.]]></description>
+            <description><![CDATA[The set of processed images produced by the study OR The set of extracted features produced by the study or the address to a CMSO Track file as a JSON data package .]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <structured-field name="factors"/>
