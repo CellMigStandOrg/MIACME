@@ -99,7 +99,7 @@
             </recommended-ontologies>
         </unit-field>         
         <field header="Raw Data File" data-type="String" is-file-field="true"
-            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Raw Data File]]></description>
             <default-value><![CDATA[]]></default-value>
