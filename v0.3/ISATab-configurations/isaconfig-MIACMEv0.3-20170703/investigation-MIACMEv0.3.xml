@@ -255,10 +255,22 @@
             <description><![CDATA[The number of raw images produced by the study]]></description>
             <default-value><![CDATA[0.3]]></default-value>
         </field>
+        <field header="Comment[License for raw images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the raw images.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
         <field header="Comment[Number of processed images]" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="true"
                is-forced-ontology="false" section="STUDY">
             <description><![CDATA[The number of processed images produced by the study]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[License for processed images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the processed images.]]></description>
             <default-value><![CDATA[0.3]]></default-value>
         </field>
         <field header="Study PubMed ID" data-type="String" is-file-field="false"

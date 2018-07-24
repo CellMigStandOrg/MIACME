@@ -3,45 +3,57 @@
         <measurement term-label="[Sample]" term-accession="" source-abbreviation=""/>
         <technology term-label="" term-accession="" source-abbreviation=""/>
         <field header="Source Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[Source Name]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Characteristics[organism]" data-type="Ontology term"
-            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[The organism of origin of the cell.]]></description>
+        <field header="Characteristics[cell model]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA["A description of the cells used in the experiment. For example: cell line, primary cell, patient-derived xenograft, organoid, synthetic cell.".]]></description>
             <default-value/>
             <recommended-ontologies>
-                <ontology id="http://data.bioontology.org/ontologies/NCBITAXON"
-                    abbreviation="NCBITAXON"
-                    name="National Center for Biotechnology Information (NCBI) Organismal Classification"
-                    version="2"/>
+                <ontology id="http://data.bioontology.org/ontologies/CLO" abbreviation="CLO"
+                          name="Cell Line Ontology" version="43"/>
+                <ontology id="http://data.bioontology.org/ontologies/CL" abbreviation="CL"
+                          name="Cell Ontology" version="44"/>
             </recommended-ontologies>
         </field>
         <field header="Characteristics[cell type]" data-type="Ontology term"
-            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[The type of cell being used in the study.]]></description>
             <default-value/>
             <recommended-ontologies>
                 <ontology id="http://data.bioontology.org/ontologies/CLO" abbreviation="CLO"
-                    name="Cell Line Ontology" version="43"/>
+                          name="Cell Line Ontology" version="43"/>
                 <ontology id="http://data.bioontology.org/ontologies/CL" abbreviation="CL"
-                    name="Cell Ontology" version="44"/>
+                          name="Cell Ontology" version="44"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[organism]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The organism of origin of the cell.]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="http://data.bioontology.org/ontologies/NCBITAXON"
+                          abbreviation="NCBITAXON"
+                          name="National Center for Biotechnology Information (NCBI) Organismal Classification"
+                          version="2"/>
             </recommended-ontologies>
         </field>
         <field header="Characteristics[specific cell description]" data-type="String"
-            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[The specific details about the cell.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
 
         <field header="Sample Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[Sample Name]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
