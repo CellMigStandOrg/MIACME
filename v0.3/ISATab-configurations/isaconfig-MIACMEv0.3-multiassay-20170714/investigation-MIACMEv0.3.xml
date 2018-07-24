@@ -230,7 +230,37 @@
             <description><![CDATA[Yes/No depending if these ISA-Tab files are compliant with the MIACME version indicated above. This field should be completed by the validator.]]></description>
             <default-value><![CDATA[not known]]></default-value>
             <list-values>yes,no,not known</list-values>
-        </field>       
+        </field>
+        <field header="Comment[Number of subjects]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of participants in the study.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Number of biological replicates]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of parallel measurements of biologically distinct samples, which capture random biological variation.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Number of technical replicates]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of repeated measurements of the same sample, which represent independent measures of the random noise associated with protocols or equipment]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Number of raw images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of raw images produced by the study]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Number of processed images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of processed images produced by the study]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
         <field header="Study PubMed ID" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY PUBLICATIONS">
