@@ -231,6 +231,12 @@
             <default-value><![CDATA[not known]]></default-value>
             <list-values>yes,no,not known</list-values>
         </field>
+        <field header="Comment[License for the whole dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the whole dataset associated with the study.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
         <field header="Comment[Number of subjects]" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="true"
                is-forced-ontology="false" section="STUDY">
@@ -271,6 +277,24 @@
                is-multiple-value="false" is-required="false" is-hidden="true"
                is-forced-ontology="false" section="STUDY">
             <description><![CDATA[The terms of use of the processed images.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Extracted Features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The set of extracted features produced by the study.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[License for the extracted features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the extracted features data.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Extracted features curation process]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A free text description of what was the curation process applied, if any]]></description>
             <default-value><![CDATA[0.3]]></default-value>
         </field>
         <field header="Study PubMed ID" data-type="String" is-file-field="false"

@@ -5,19 +5,19 @@
         <field header="Investigation Identifier" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Identifier]]></description>
+            <description><![CDATA[Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Title" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Title]]></description>
+            <description><![CDATA[The title of the investigation.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Description" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Description]]></description>
+            <description><![CDATA[A textual narrative comprised of one or more statements about the investigation.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Submission Date" data-type="String" is-file-field="false"
@@ -38,13 +38,13 @@
             <description><![CDATA[A set of statements summarizing the findings of the investigation. It could be a URI referring to a nanopublication.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment [Created with configuration]" data-type="String"
+        <field header="Comment[Created with configuration]" data-type="String"
                is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false" section="INVESTIGATION">
             <description><![CDATA[Comment [Created with configuration]]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment [Last Opened With Configuration]" data-type="String"
+        <field header="Comment[Last Opened With Configuration]" data-type="String"
                is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false" section="INVESTIGATION">
             <description><![CDATA[Comment [Last Opened With Configuration]]]></description>
@@ -231,6 +231,12 @@
             <default-value><![CDATA[not known]]></default-value>
             <list-values>yes,no,not known</list-values>
         </field>
+        <field header="Comment[License for the whole dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the whole dataset associated with the study.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
         <field header="Comment[Number of subjects]" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="true"
                is-forced-ontology="false" section="STUDY">
@@ -271,6 +277,24 @@
                is-multiple-value="false" is-required="false" is-hidden="true"
                is-forced-ontology="false" section="STUDY">
             <description><![CDATA[The terms of use of the processed images.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Extracted Features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The set of extracted features produced by the study.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[License for the extracted features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the extracted features data.]]></description>
+            <default-value><![CDATA[0.3]]></default-value>
+        </field>
+        <field header="Comment[Extracted features curation process]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A free text description of what was the curation process applied, if any]]></description>
             <default-value><![CDATA[0.3]]></default-value>
         </field>
         <field header="Study PubMed ID" data-type="String" is-file-field="false"
