@@ -35,7 +35,7 @@
         <field header="Parameter Value[imaging sequence type]" data-type="Ontology term"
             is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[Single or multiple imaging timepoints in the experiment.]]></description>
+            <description><![CDATA[Single or multiple imaging timepoints in the experiment (endpoint or time-series)]]></description>
             <default-value/>
         </field>
         <field header="Parameter Value[observation period]" data-type="Ontology term"
@@ -47,7 +47,7 @@
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
             is-forced-ontology="false">
             <default-value/>
-            <description><![CDATA[The unit of the duration.]]></description>
+            <description><![CDATA[The unit of the observation period.]]></description>
             <recommended-ontologies>
                 <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
                     <branch id="UO:0000003" name="time unit"/>
@@ -63,7 +63,7 @@
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
             is-forced-ontology="false">
             <default-value/>
-            <description><![CDATA[The unit of the duration.]]></description>
+            <description><![CDATA[The unit of the time series interval.]]></description>
             <recommended-ontologies>
                 <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
                     <branch id="UO:0000003" name="time unit"/>
@@ -80,6 +80,12 @@
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[numerical aperture]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Value that indicates the light acceptance angle of the objective (determines the light gathering power, resolving power, and depth of field of the objective).]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Parameter Value[pixel size]" data-type="Double" is-file-field="false"
