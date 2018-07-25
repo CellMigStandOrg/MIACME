@@ -1,7 +1,7 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="transwell_invasion_assay"
+    <isatab-configuration table-name="spheroid_invasion_assay"
         isatab-assay-type="generic_assay" isatab-conversion-target="generic">
-        <measurement term-label="Transwell invasion assay" term-accession=""
+        <measurement term-label="spheroid invasion assay" term-accession=""
             source-abbreviation=""/>
         <technology term-label="microscopy imaging" term-accession="" source-abbreviation=""/>
         <field header="Sample Name" data-type="String" is-file-field="false"
@@ -11,16 +11,9 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <protocol-field protocol-type="imaging"/>
-        <field header="Assay Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[Assay Name]]></description>
-            <default-value><![CDATA[]]></default-value>
-        </field>
-        <protocol-field protocol-type="imaging"/>        
         <field header="Parameter Value[imaging modality]" data-type="Ontology term"
-            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[The type of microscopy used to acquire images.]]></description>
             <recommended-ontologies>
                 <ontology id="" abbreviation="FBbi" name="Biological imaging methods" version="">
@@ -33,63 +26,69 @@
             <default-value/>
         </field>
         <field header="Parameter Value[imaging sequence type]" data-type="Ontology term"
-            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[Single or multiple imaging timepoints in the experiment.]]></description>
+               is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Single or multiple imaging timepoints in the experiment (endpoint or time-series)]]></description>
             <default-value/>
         </field>
         <field header="Parameter Value[observation period]" data-type="Ontology term"
-            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[For time-series, it is the timespan since the imaging process starts until it ends. For endpoint, it is the timespan since the starting point until the image is taken.]]></description>
             <default-value/>
         </field>
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
-            is-forced-ontology="false">
+                    is-forced-ontology="false">
             <default-value/>
-            <description><![CDATA[The unit of the duration.]]></description>
+            <description><![CDATA[The unit of the observation period.]]></description>
             <recommended-ontologies>
                 <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
                     <branch id="UO:0000003" name="time unit"/>
                 </ontology>
             </recommended-ontologies>
-        </unit-field>        
+        </unit-field>
         <field header="Parameter Value[time series interval]" data-type="Double"
-            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[The duration between two sequential frames of the time lapse series.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
-            is-forced-ontology="false">
+                    is-forced-ontology="false">
             <default-value/>
-            <description><![CDATA[The unit of the duration.]]></description>
+            <description><![CDATA[The unit of the time series interval.]]></description>
             <recommended-ontologies>
                 <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
                     <branch id="UO:0000003" name="time unit"/>
                 </ontology>
             </recommended-ontologies>
-        </unit-field>         
+        </unit-field>
         <field header="Parameter Value[channel definition]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[Identification of the label or constrasts]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Parameter Value[objective lens]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        <field header="Parameter Value[numerical aperture]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Value that indicates the light acceptance angle of the objective (determines the light gathering power, resolving power, and depth of field of the objective).]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <field header="Parameter Value[pixel size]" data-type="Double" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
             <description><![CDATA[The physical dimension of one picture element in your image.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
-            is-forced-ontology="false">
+                    is-forced-ontology="false">
             <default-value/>
             <description><![CDATA[The unit of the pixel size.]]></description>
             <recommended-ontologies>
@@ -97,7 +96,13 @@
                     <branch id="UO:0000001" name="length unit"/>
                 </ontology>
             </recommended-ontologies>
-        </unit-field>         
+        </unit-field>
+        <field header="Assay Name" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Assay Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <field header="Raw Data File" data-type="String" is-file-field="true"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
