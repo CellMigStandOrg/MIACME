@@ -51,13 +51,13 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Characteristics[cell provider]" data-type="String" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate the provider, supplier or vendor of the cell/cell line]]></description>
             <default-value></default-value>
         </field>
         <field header="Characteristics[tissue]" data-type="Ontology term" is-file-field="false"
-               is-multiple-value="false" is-required="true" is-hidden="true"
+               is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[Provide anatomical or histological information associated to the Source Biological material (for example, liver, epithelium,....). Ideally, provide UBERON uri]]></description>
             <default-value/>
@@ -67,7 +67,7 @@
             </recommended-ontologies>
         </field>
         <field header="Characteristics[cellular component]" data-type="Ontology term"
-               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate cellular component from GO]]></description>
             <default-value/>
@@ -78,14 +78,14 @@
             </recommended-ontologies>
         </field>
         <field header="Characteristics[life cycle stage]" data-type="List" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate life cycle stage from uberon]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>primary cell,immortalized cell</list-values>
         </field>
         <field header="Characteristics[genotype]" data-type="String" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate cell genotype]]></description>
             <default-value></default-value>
@@ -99,27 +99,27 @@
             <list-values>glass, plastic, ECM, gel collagen, fribronecting OR mouse, dermis, zebrafish, embryo</list-values>
         </field>
         <field header="Parameter Value[cell culture vessel]" data-type="List" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate the nature of hardware used to grow the cell]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>,flask,uncoated microplate,coated microplate,petri dish</list-values>
         </field>
         <field header="Parameter Value[cell culture medium]" data-type="String"
-               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate cell culture medium]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Parameter Value[cell culture serum]" data-type="List" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate serum type used for culture]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>,bovine calf serum,fetal calf serum</list-values>
         </field>
         <field header="Parameter Value[cell culture serum concentration]" data-type="Double" is-file-field="false"
-               is-multiple-value="false" is-required="false" is-hidden="true"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[final concentration of the serum]]></description>
             <default-value><![CDATA[]]></default-value>
@@ -135,13 +135,13 @@
             </recommended-ontologies>
         </unit-field>
         <field header="Parameter Value[cell culture antibiotics]" data-type="String"
-               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[list antibiotic compounds (from CHEBI) used in the culture ]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Parameter Value[cell culture temperature]" data-type="Double"
-               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate cell culture incubation temperature ]]></description>
             <default-value><![CDATA[]]></default-value>
@@ -157,7 +157,7 @@
             </recommended-ontologies>
         </unit-field>
         <field header="Parameter Value[cell culture CO2 partial pressure]" data-type="Double"
-               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[indicate CO2 partial pressure]]></description>
             <default-value><![CDATA[]]></default-value>
