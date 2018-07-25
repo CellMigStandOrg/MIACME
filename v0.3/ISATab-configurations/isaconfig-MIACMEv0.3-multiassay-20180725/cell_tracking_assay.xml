@@ -11,13 +11,6 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <protocol-field protocol-type="imaging"/>
-        <field header="Assay Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[Assay Name]]></description>
-            <default-value><![CDATA[]]></default-value>
-        </field>
-        <protocol-field protocol-type="imaging"/>
         <field header="Parameter Value[imaging modality]" data-type="Ontology term"
                is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false">
@@ -104,6 +97,12 @@
                 </ontology>
             </recommended-ontologies>
         </unit-field>
+        <field header="Assay Name" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Assay Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <field header="Raw Data File" data-type="String" is-file-field="true"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
