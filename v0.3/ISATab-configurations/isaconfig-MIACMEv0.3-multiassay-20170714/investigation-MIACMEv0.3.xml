@@ -5,19 +5,19 @@
         <field header="Investigation Identifier" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Identifier]]></description>
+            <description><![CDATA[Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Title" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Title]]></description>
+            <description><![CDATA[The title of the investigation.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Description" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="INVESTIGATION">
-            <description><![CDATA[Investigation Description]]></description>
+            <description><![CDATA[A textual narrative comprised of one or more statements about the investigation.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Investigation Submission Date" data-type="String" is-file-field="false"
@@ -38,13 +38,13 @@
             <description><![CDATA[A set of statements summarizing the findings of the investigation. It could be a URI referring to a nanopublication.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment [Created with configuration]" data-type="String"
+        <field header="Comment[Created with configuration]" data-type="String"
             is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="INVESTIGATION">
             <description><![CDATA[Comment [Created with configuration]]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment [Last Opened With Configuration]" data-type="String"
+        <field header="Comment[Last Opened With Configuration]" data-type="String"
             is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="INVESTIGATION">
             <description><![CDATA[Comment [Last Opened With Configuration]]]></description>
