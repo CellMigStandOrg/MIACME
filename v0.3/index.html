@@ -102,10 +102,12 @@
         The document and checklist has been developed within the Cell Migration commmunity, and feedback is welcome.
     </p>
     <p>
-        MIACME v0.3 is the third version of MIACME checklist. For information about the previous versions, please visit:
+        MIACME v0.3 is the third version of MIACME checklist. For information about the previous versions, please visit <a href="http://cmso.science/MIACME">the main MIACME page</a>.
+
+        In particular, the two previous specifications are available at:
         <ul>
-            <li>the <a href="http://cellmigstandorg.github.io/MIACME/v0.1/spec/">MIACME v0.1 specification</a></li>
-            <li>the <a href="http://cellmigstandorg.github.io/MIACME/v0.2/">MIACME v0.2 specification</li>
+            <li><a href="http://cellmigstandorg.github.io/MIACME/v0.1/spec/">MIACME v0.1 specification</a></li>
+            <li><a href="http://cellmigstandorg.github.io/MIACME/v0.2/">MIACME v0.2 specification</li>
         </ul>
     </p>
     <p>
@@ -300,20 +302,38 @@
     </p>
 
     <p>
-        The metadata framework associated with the ISA model encompasses a series of <a href="http://isa-tools.org/software-suite/">open source software tools</a> that faciliate the manipulation of datasets described with the ISA mode.
+        The metadata framework associated with the ISA model encompasses a series of <a href="http://isa-tools.org/software-suite/">open source software tools</a> that faciliate the manipulation of datasets described with the ISA model.
     </p>
 
     <p>
         For MIACME, we provide a set of configuration files (or templates), allowing researchers to describe their datasets using the ISAcreator tool:
         <ul>
-    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-20170703">configuration</a> for a single assay, where the user needs to specify the measurement and technology.</i>
-    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-multiassay-20170714">configuration</a> considering multiple assays, where the user can select the assay type (e.g. 3D cell tracking assay, capillary chamber migration assay)</i>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-20180725">configuration</a> for a single assay, where the user needs to specify the measurement and technology.</i>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-multiassay-20180725">configuration</a> considering multiple assays, where the user can select the assay type (e.g. 3D cell tracking assay, capillary chamber migration assay)</i>
         </ul>
+    </p>
+
+    <p>
+        These configuration files are <a href="https://www.w3.org/XML/">XML</a> files providing a template of the ISA model including the specific recommendations given by the MIACME reporting guideline. Using these templates in the ISAcreator tool (see the next section) is a way for researchers to provide the metadata for
+        their experiment.
     </p>
 
 
 </section>
 
+<section>
+
+    <h2 id="isacreator">Creation of MIACME-compliant metadata</h2>
+
+    <p>
+    Given the MIACME ISA-Tab configurations described above, researchers could use the <a href="https://github.com/ISA-tools/ISAcreator">ISAcreator tool</a> to produce MIACME-compliant metadata about their experiments. ISAcreator is a Java-based
+    desktop application that supports spreadsheet-like functionality. By loading the
+    </p>
+
+    <p>
+    A version of ISAcreator including the MIACME configuration files is made available at <a href="https://github.com/CellMigStandOrg/ISAcreator-MIACME">the ISAcreator-MIACME repository</a>. There you will also find information on how to run and use ISAcreator.
+    </p>
+</section>
 
 <section>
     <h4 id="roadmap">Future plans</h4>
