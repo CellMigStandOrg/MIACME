@@ -2,7 +2,7 @@
 
 ## Overview 
 
-For an overview on MIACME, please read the [specification abstract](http://cellmigstandorg.github.io/MIACME/v0.3/spec/#abstract).
+For an overview on MIACME, please read the [specification abstract](http://cmso.science/MIACME/v0.3/#abstract).
 
 ## License 
 
