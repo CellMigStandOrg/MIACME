@@ -20,14 +20,8 @@
     },
     "@id": { "type": "string", "format": "uri" },
     "@type": { "type": "string" },
-    "experimental_setup": {
-      "$ref": "experimental_setup_schema.json#"
-    },
-    "imaging_condition": {
-      "$ref": "imaging_condition_schema.json#"
-    },
-    "data": {
-      "$ref": "data_schema.json#"
+    "investigation": {
+      "$ref": "investigation_schema.json#"
     }
   }
 }
