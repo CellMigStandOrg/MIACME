@@ -2,7 +2,7 @@
 
 ## Overview 
 
-For an overview on MIACME, please read the [specification abstract](http://cmso.science/MIACME/v0.3/#abstract).
+This repository contains information about the reporting guideline for Minimum Information About Cell Migration Experiments (MIACME), developed as part of the Cell Migration Standardisation Organisation ([CMSO](http://cmso.science)). For an overview on MIACME, please read the [specification abstract](http://cmso.science/MIACME/v0.3/#abstract).
 
 ## License 
 
