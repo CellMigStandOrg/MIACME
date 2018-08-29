@@ -4,7 +4,7 @@
   "description": "A schema describing a publication.",
   "id" : "http://localhost:8080/schemas/publication_schema.json",
   "type": "object",
-  "definitions" :{
+  "properties": {
     "@context": {
       "anyOf": [
         {
@@ -20,31 +20,21 @@
     },
     "@id": { "type": "string", "format": "uri" },
     "@type": { "type": "string" },
-    "doi": {
-      "description": "a digital object identifier",
+    "identifier": {
+      "description": "A persistent identifier for the publication, it should be a DOI or pubmed identifier",
       "type": "string"
     },
-    "pmid": {
-      "description": "a pubmed object identifier",
-      "type": "string",
-      "pattern": "^pmid:[0-9]"
-    }
-  },
-  "properties": {
-    "identifier" : {
-      "type" : "object",
-      "@type": { "type": "string", "enum": [ "Identifier" ]}  ,
-      "anyOf": [
-        { "$ref": "#/definitions/doi" },
-        { "$ref": "#/definitions/pmid" }
-      ]
-    },
     "identifierSource": {
+      "description": "Information about the organisation or namespace responsible for minting the identifier.",
       "type": "string"
     },
     "title": {
-      "description" : "the title of the article, document or publication",
+      "description" : "The title of the publication.",
       "type" : "string"
+    },
+    "publicationVenue": {
+      "description": "The venue where the publication appears (journal, publishing platform etc).",
+      "type": "string"
     },
     "authors": {
       "type": "array",
@@ -52,9 +42,9 @@
         "$ref": "person_schema.json#"
       }
     },
-    "venue" :{
-      "description" : "Name of the publication venue.",
-      "type" : "string"
+    "date": {
+      "description": "The publication date.",
+      "$ref": "date_schema.json#"
     }
   }
 }
