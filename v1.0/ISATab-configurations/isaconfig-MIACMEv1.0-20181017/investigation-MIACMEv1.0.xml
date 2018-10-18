@@ -1,5 +1,5 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="investigation-MIACMEv0.3">
+    <isatab-configuration table-name="investigation-MIACMEv1.0">
         <measurement term-label="[investigation]" term-accession="" source-abbreviation=""/>
         <technology term-label="" term-accession="" source-abbreviation=""/>
         <field header="Investigation Identifier" data-type="String" is-file-field="false"
@@ -222,7 +222,7 @@
                is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false" section="STUDY">
             <description><![CDATA[The version of MIACME that these ISA-Tab files should be compliant with.]]></description>
-            <default-value><![CDATA[0.3]]></default-value>
+            <default-value><![CDATA[1.0]]></default-value>
         </field>
         <field header="Comment[MIACME Compliance]" data-type="List" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="false"
