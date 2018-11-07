@@ -3,6 +3,8 @@
   "title": "MIACME date schema",
   "description": "Information about a calendar date or timestamp indicating day, month, year and time of an event.",
   "type": "object",
+  "additionalProperties": false,
+  "required": ["date","type"],
   "properties": {
     "@context": {
       "anyOf": [
@@ -28,7 +30,5 @@
       "description": "The type of date, used to specify the process which is being timestamped by the date attribute value, ideally comes from a controlled terminology.",
       "$ref" : "annotation_schema.json#"
     }
-  },
-  "additionalProperties": false,
-  "required": ["date","type"]
+  }
 }

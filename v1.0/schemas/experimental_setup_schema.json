@@ -4,6 +4,7 @@
   "version" : "0.3",
   "description" : "JSON-schema representing the experimental setup in a cell migration experiment.",
   "type" : "object",
+  "required": [ "assayType", "interference", "microenvironment", "cellType" ],
   "properties" : {
     "@context": {
       "anyOf": [
@@ -52,6 +53,5 @@
       "type": "string",
       "description": "The medium of the experiment. "
     }
-  },
-  "required": [ "assayType", "interference", "microenvironment", "cellType" ]
+  }
 }

@@ -4,6 +4,7 @@
   "version" : "0.3",
   "description" : "JSON-schema representing an organization in MIACME. Legal or physical entity corresponding to a business or administration",
   "type" : "object",
+  "additionalProperties": false,
   "properties" : {
     "@context": {
       "anyOf": [
@@ -31,6 +32,5 @@
     "name" : {
       "type" : "string"
     }
-  },
-  "additionalProperties": false
+  }
 }
