@@ -139,7 +139,7 @@
             <description><![CDATA[The physical size of the pixel in the width dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="physicalSizeX Unit" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Comment[physicalSizeX Unit]" data-type="List" is-multiple-value="false" is-required="false"
                     is-forced-ontology="false">
             <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the width dimension.]]></description>
@@ -151,7 +151,7 @@
             <description><![CDATA[The physical size of the pixel in the height dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="physicalSizeY Unit" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Comment[physicalSizeY Unit]" data-type="List" is-multiple-value="false" is-required="false"
                is-forced-ontology="false">
             <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the height dimension.]]></description>
@@ -163,7 +163,7 @@
             <description><![CDATA[The physical size of the pixel in the depth dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="physicalSizeZ Unit" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Comment[physicalSizeZ Unit]" data-type="List" is-multiple-value="false" is-required="false"
                is-forced-ontology="false">
             <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the depth dimension.]]></description>
