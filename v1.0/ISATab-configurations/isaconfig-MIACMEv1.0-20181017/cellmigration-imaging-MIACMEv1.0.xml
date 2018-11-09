@@ -83,19 +83,101 @@
             <description><![CDATA[Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Parameter Value[pixel size]" data-type="Double" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[The physical dimension of one picture element in your image.]]></description>
+        <field header="Parameter Value[pixel identifier]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[An identifier for the picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel dimension order]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The order of the dimensions.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>XYZCT, XYZTC, XYCTZ, XYCZT, XYTCZ, XYTZC</list-values>
+        </field>
+        <field header="Parameter Value[pixel type]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The type of picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>int8, int16, int32, uint8, uint16, uint32, float, double, complex, double-complex, bit</list-values>
+        </field>
+        <field header="Parameter Value[pixel sizeX]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the width dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeY]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the height dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeZ]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the depth dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeC]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The number of channels of the picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeT]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The number of time points.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel physicalSizeX]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the width dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
-            is-forced-ontology="false">
+                    is-forced-ontology="false">
             <default-value/>
-            <description><![CDATA[The unit of the pixel size.]]></description>
+            <description><![CDATA[The unit of the physical size of the pixel in the width dimension.]]></description>
             <recommended-ontologies>
                 <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
-                    <branch id="UO:0000001" name="length unit"/>
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[pixel physicalSizeY]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the height dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the physical size of the pixel in the height dimension.]]></description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[pixel physicalSizeZ]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the depth dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the physical size of the pixel in the depth dimension.]]></description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
                 </ontology>
             </recommended-ontologies>
         </unit-field>
