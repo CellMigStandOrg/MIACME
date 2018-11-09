@@ -89,14 +89,14 @@
             <description><![CDATA[An identifier for the picture element.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Parameter Value[pixel dimension order]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[pixel dimension order]" data-type="List" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[The order of the dimensions.]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>XYZCT, XYZTC, XYCTZ, XYCZT, XYTCZ, XYTZC</list-values>
         </field>
-        <field header="Parameter Value[pixel type]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[pixel type]" data-type="List" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[The type of picture element.]]></description>
