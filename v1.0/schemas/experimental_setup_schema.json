@@ -1,12 +1,14 @@
 {
+  "id": "https://w3id.org/mircat/miacme/schema/experimental_setup_schema.json",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title" : "MIACME experimental setup schema",
-  "version" : "0.3",
+  "version" : "1.0",
   "description" : "JSON-schema representing the experimental setup in a cell migration experiment.",
   "type" : "object",
-  "required": [ "assayType", "interference", "microenvironment", "cellType" ],
+  "required": [ "basicApproach", "cellModel", "assay", "treatment", "microEnvironment" ],
   "properties" : {
-    "@context": {
+     "@context": {
+      "description": "The JSON-LD context",
       "anyOf": [
         {
           "type": "string"
@@ -19,39 +21,45 @@
         }
       ]
     },
-    "@id": { "type": "string", "format": "uri" },
-    "@type": { "type": "string" },
-    "assayType": {
+    "@id": {
+      "description": "The JSON-LD identifier",
       "type": "string",
-      "description": "The type of assay. For example: single-cell migration, developmental assay, immune response, chemotaxic, microfluidic, wound-healing, spheroid"
+      "format": "uri"
     },
-    "interference" : {
+    "@type": {
+      "description": "The JSON-LD type",
       "type": "string",
-       "description": "Representing the interference or perturbation in the experiment. For example: RNAi, gene construct, chemicals, serum, substrate, stiffness, specific protein"
+      "enum": [
+        "ExperimentalSetup"
+      ]
     },
-    "microenvironment": {
-      "anyOf": [
-      {
-        "microenvironmentSubstrate": {
-          "type": "string",
-          "description": "The microenvironment for in vitro experiments, description of the substrate. For example: glass, plastic, ECM, gel or collagen, fibronectin"
-        }
-      },
-      {
-        "microenvironmentTissue": {
-          "type": "string",
-          "description": "The microenvironment for in vivo experiments, description of the tissue. For example: mouse, dermis, Zebrafish, embryo."
-        }
-      }
-    ]
+    "basicApproach": {
+      "description": "A description of the study type or approach used, such as in vitro, in vivo, in silico.",
+      "type": "string"
     },
-    "cellType" : {
-      "type": "string",
-      "description": "The type of cell used in the experiment. For example: cell line, primary cell, endogenous cell."
+    "cellModel": {
+      "description": "A description of the cells used in the experiment.",
+      "$ref": "cell_model_schema.json#"
+    },
+    "assay": {
+      "description": "The migration/invasion assay for this investigation, and its specifications.",
+      "$ref": "assay_schema.json#"
+    },
+    "treatment" : {
+      "description": "The manipulation/perturbation of which the (migratory) effect is being tested.",
+      "type": "string"
+    },
+    "microEnvironment": {
+      "description": "The nature or components of the material surrounding/contacting the cells for which migration is tested, including substrate, ECM protein or synthetic counterpart, tissue, other cells or entire organism.",
+      "type": "string"
+    },
+    "organism": {
+      "description": "The organism corresponding to the microEnvironment, if it is a tissue.",
+      "type": "string"
     },
     "medium" : {
-      "type": "string",
-      "description": "The medium of the experiment. "
+      "description": "Solution used to provide nutritives and motility-assisting additives to migrating cells",
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,68 @@
+{
+  "id": "https://w3id.org/mircat/miacme/schema/imaging_condition_schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "MIACME investigation schema",
+  "version" : "1.0",
+  "description": "JSON-schema representing an investigation in MIACME",
+  "type": "object",
+  "required": [ "imagingModality", "temporalInformation", "channelReadout"],
+  "properties": {
+     "@context": {
+      "description": "The JSON-LD context",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        },
+        {
+          "type": "array"
+        }
+      ]
+    },
+    "@id": {
+      "description": "The JSON-LD identifier",
+      "type": "string",
+      "format": "uri"
+    },
+    "@type": {
+      "description": "The JSON-LD type",
+      "type": "string",
+      "enum": [
+        "ImagingCondition"
+      ]
+    },
+    "modality" : {
+      "type": "string",
+      "description": "The type of microscopy used to acquire images. For example: confocal, microscopy, spinning disk, wide-field, multi-phonon, light-sheet, super-resolution, "
+    },
+    "imageSequenceType": {},
+    "observationPeriod": {},
+    "observationPeriodUnit": {},
+    "timeSeriesInterval": {},
+    "timeSeriesIntervalUnit": {},
+    "channelDefinition": {
+      "description": "Identification of the label or constrasts",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pixels": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "$ref": "pixel_schema.json#"
+      }
+    },
+    "objectiveLens": {
+      "description": "Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)",
+      "type": "string"
+    },
+    "numericalAperture": {
+      "description": "Value that indicates the light acceptance angle of the objective (\ndetermines the light gathering power, resolving power, and depth of \nfield of the objective).",
+      "type": "string"
+    }
+  }
+}

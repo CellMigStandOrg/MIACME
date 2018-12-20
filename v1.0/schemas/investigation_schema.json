@@ -1,12 +1,13 @@
 {
+  "id": "https://w3id.org/mircat/miacme/schema/investigation_schema.json",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title" : "MIACME investigation schema",
-  "version" : "0.3",
+  "version" : "1.0",
   "description" : "JSON-schema representing an investigation in MIACME. A planned activity that involves one or more studies.",
   "type" : "object",
-  "additionalProperties": false,
   "properties" : {
     "@context": {
+      "description": "The JSON-LD context",
       "anyOf": [
         {
           "type": "string"
@@ -19,8 +20,18 @@
         }
       ]
     },
-    "@id": { "type": "string", "format": "uri" },
-    "@type": { "type": "string" },
+    "@id": {
+      "description": "The JSON-LD identifier",
+      "type": "string",
+      "format": "uri"
+    },
+    "@type": {
+      "description": "The JSON-LD type",
+      "type": "string",
+      "enum": [
+        "Investigation"
+      ]
+    },
     "identifier" : {
       "description": "Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.",
       "type" : "string"
@@ -74,6 +85,13 @@
         "type": "string"
       }
     },
+    "dates": {
+      "description": "Dates relevant to the investigation.",
+      "type": "array",
+      "items": {
+        "$ref": "date_schema.json#"
+      }
+    },
     "MIACMEversion": {
       "description": "The version of MIACME this dataset description should be compliant with.",
       "type": "string"
@@ -82,5 +100,6 @@
       "description": "The result of the validation for MIACME compliance.",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }
