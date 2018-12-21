@@ -268,7 +268,7 @@
     <p>
         The following figure provides an overview of MIACME entities, their relationships and cardinalities:
         <figure>
-            <img src="https://raw.githubusercontent.com/CellMigStandOrg/MIACME/master/v1.0/figures/MIACME_1.0.jpg" alt="MIACME v1.0" style="width:700px;">
+            <img src="https://raw.githubusercontent.com/CellMigStandOrg/MIACME/master/v1.0/figures/CMSO-MIACME-v1.0.jpg" alt="MIACME v1.0" style="width:700px;">
             <figcaption>A diagram representing MIACME entities, their relationships and cardinalities.</figcaption>
         </figure>
 
@@ -286,10 +286,11 @@
 
 
     <p>
-        Another outcome of MIACME v0.3 has been a representation of the entities relying on <a href="https://json-schema.org/">JSON schemas</a>, which is a vocabulary that allows to validate and annotate <a href="https://www.json.org/">JavaScript Object Notation (JSON)</a> documents.
+        Another outcome of MIACME has been a representation of the entities relying on <a href="https://json-schema.org/">JSON schemas</a>, which is a vocabulary that allows to validate and annotate <a href="https://www.json.org/">JavaScript Object Notation (JSON)</a> documents.
         The schemas are prepared to support the data to be in JSON for Linking Data (<a href="https://json-ld.org/">JSON-LD</a>) format.
         The schemas can be accessed in the <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/schemas">schemas folder</a>.
-        The JSON-LD context files can be accessed in the <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/contexts">contexts folder</a>.
+        In version 1.0, we have also added <a href="https://json-ld.org/">JSON-LD</a> context files. JSON-LD is JSON for linked data, supporting interconnecting web information. Context files represent a mapping between terms in JSON to vocabularies that provide
+        data semantics. The JSON-LD context files can be accessed in the <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/contexts">contexts folder</a>.
 
     </p>
 
@@ -299,7 +300,7 @@
     </p>
 
     <p>
-        The development of MIACME followed an iterative process. MIACME v1.0 was derived as a revision of MIACME v1.0, based on input from researchers reporting their datasets using MIACME.
+        The development of MIACME followed an iterative process. MIACME v1.0 was derived as a revision of MIACME v0.3, based on input from researchers reporting their datasets using MIACME.
     </p>
 
 
@@ -326,8 +327,8 @@
     <p>
         For MIACME, we provide a set of configuration files (or templates), allowing researchers to describe their datasets using the ISAcreator tool:
         <ul>
-    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-20180725">configuration</a> for a single assay, where the user needs to specify the measurement and technology.</i>
-    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v0.3/ISATab-configurations/isaconfig-MIACMEv0.3-multiassay-20180725">configuration</a> considering multiple assays, where the user can select the assay type (e.g. 3D cell tracking assay, capillary chamber migration assay)</i>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/ISATab-configurations/isaconfig-MIACMEv1.0-20181017">configuration</a> for a single assay, where the user needs to specify the measurement and technology.</i>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/ISATab-configurations/isaconfig-MIACMEv0.3-multiassay-20181017">configuration</a> considering multiple assays, where the user can select the assay type (e.g. 3D cell tracking assay, capillary chamber migration assay)</i>
         </ul>
     </p>
 
@@ -355,13 +356,9 @@
 
 <section>
     <h4 id="roadmap">Future plans</h4>
-    MIACME v0.3 has focused on identifying the minimum descriptors required to represent cell migration experiments.
-    In the next steps, we will:
-    <ul>
-        <li>produce more examples of MIACME-compliant descriptions of different types of cell migration experiments</li>
-        <li>include further requirements related to semantic artifacts and other external resources</li>
-        <li>release new versions of the MIACME checklist after incorporating the feedback received</li>
-    </ul>
+    MIACME has focused on identifying the minimum descriptors required to represent cell migration experiments.
+
+    MIACME version 1.0 is considered a stable version, but additions or modifications will be considered according to community feedback.
 
 </section>
 
