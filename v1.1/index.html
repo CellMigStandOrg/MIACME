@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MIACME 1.1</title>
+    <meta charset='utf-8'>
+    <script src='js/mod-respec-w3c-common.js' async class='remove'></script>
+    <link href="css/w3c-unofficial.css" rel="stylesheet" type="text/css">
+    <script class='remove'>
+        var respecConfig = {
+            specStatus: "base",
+            shortName: "miacme",
+            overrideCopyright: "<p class=copyright>CC BY-SA 4.0 license</p>",
+            authors: [
+                {   name: "Alejandra Gonzalez-Beltran",
+                    url: "http://orcid.org/0000-0003-3499-8262",
+                    company: "Oxford e-Research Centre, Department of Engineering Science, University of Oxford",
+                    companyURL: "http://www.oerc.ox.ac.uk/"
+                }
+            ],
+            editors: [
+                {   name: "Alejandra Gonzalez-Beltran",
+                    url: "http://orcid.org/0000-0003-3499-8262",
+                    company: "Oxford e-Research Centre, Department of Engineering Science, University of Oxford",
+                    companyURL: "http://www.oerc.ox.ac.uk/"
+                }
+            ],
+            otherLinks: [{
+                key: "Contributors",
+                data: [
+                    {
+                        value: "Alejandra Gonzalez-Beltran, University of Oxford, UK",
+                        href: "http://orcid.org/0000-0003-3499-8262"
+                    },
+                    {
+                        value: "Paola Masuzzo, Ghent University and VIB, Belgium",
+                        href: "http://orcid.org/0000-0003-3699-1195"
+                    },
+                    {
+                        value: "Marleen van Troys, Ghent University, Belgium ",
+                        href: "http://orcid.org/0000-0003-4283-8103"
+                    },
+                    {
+                        value: "Philippe Rocca-Serra, University of Oxford, UK",
+                        href: "http://orcid.org/0000-0001-9853-5668"
+                    },
+                    {
+                        value: "the members of the CMSO Minimal Requirements Working Group",
+                        href: "https://cmso.science/groups/working-group-minimal-requirements/"
+                    }
+
+                ]}],
+            logos: [
+                {
+                    src: 'img/cmso.png',
+                    url: "https://cmso.science/",
+                    alt: "CMSO",
+                    width: 100,
+                    height: 50,
+                    id: 'logo-CMSO'
+                }
+            ],
+            processVersion: 2018,
+            edDraftURI: "https://github.com/CellMigStandOrg/MIACME",
+            wg: "CMSO Minimal reporting requirements working group",
+            wgURI:        "https://cmso.science/groups/working-group-minimal-requirements/",
+            wgPublicList: "wg1-cmso-minimalrequirements@vib-ugent.be",
+            wgPatentURI:  "https://cmso.science/",
+            afterEnd: function () {
+
+                var currentDate = new Date();
+                var date = currentDate.toString('dddd, MMMM ,yyyy');
+                $("#respecHeader h2").text("MIACME Specification " + date);
+                $("#respecHeader img").attr({ src: "figures/cmso.png", width: 100, height: 50 });
+            },
+            localBiblio: {
+                "Masuzzo2014": {
+                    title: "An open data ecosystem for cell migration research",
+                    href: "http://dx.doi.org/10.1016/j.tcb.2014.11.005",
+                    authors: [
+                        "Paola Masuzzo"
+                        , "Lennart Martens"
+                    ], publisher: "	Trends in Cell Biology"
+                },
+                "Taylor2008":{
+                    title: "Promoting coherent minimum reporting guidelines for biological and biomedical investigations: the MIBBI project",
+                    href: "http://doi.org/10.1038/nbt.1411",
+                    publisher: "Nature Biotechnology",
+                    authors: ["Chris F Taylor", "et al"]
+                },
+                "Wilkinson2016": {
+                    title: "The FAIR Guiding Principles for scientific data management and stewardship",
+                    href: "http://doi.org/10.1038/sdata.2016.18",
+                    publisher: "Scientific Data",
+                    authors: ["Mark D Wilkinson", "et al"]
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<section id='abstract'>
+    <p>
+        MIACME is the Minimum Information About Cell Migration Experiments reporting guideline, which is being developed by the <a href="https://cmso.science/">Cell Migration Standardisation Organisation (CMSO)</a>.
+        CMSO's goal is to facilitate the development of community standards for the field of cell migration and is supported by the <a href="http://multimot.org/">MULTIMOT</a> project of
+        <a href="http://cordis.europa.eu/project/rcn/193270_en.html">European Commission's H2020 programme</a>. The needs for these guidelines and other related standards were identified by [[Masuzzo2014]].
+    </p>
+    <p>
+        This document introduces MIACME v1.1, which is a checklist, or list of elements, for the minimal description of cell migration experiments.
+        The document and checklist have been developed within the Cell Migration commmunity, and feedback is welcome.
+    </p>
+    <p>
+        MIACME v1.1 is a stable version of MIACME checklist, arising after 3 previous versions. For information about the previous versions, please visit <a href="http://cmso.science/MIACME">the main MIACME page</a>.
+    </p>
+    <p>
+        The previous specifications are available at:
+        <ul>
+            <li><a href="http://cellmigstandorg.github.io/MIACME/v0.3/">MIACME v0.3 specification</a></li>
+            <li><a href="http://cellmigstandorg.github.io/MIACME/v0.2/">MIACME v0.2 specification</a></li>
+            <li><a href="http://cellmigstandorg.github.io/MIACME/v0.1/spec/">MIACME v0.1 specification</a></li>
+        </ul>
+    </p>
+    <p>
+        During its development, MIACME has undergone a refinement process, through which it has been improved, extended and tested against the representation of specific cell migration experiments.
+        The CMSO has engaged with relevant stakeholders in the cell migration community in order to reach agreement on the minimal descriptors required to understand, interpret, evaluate, replicate
+        and disseminate cell migration experiments.
+    </p>
+    <p>The goal behind the guidelines is to make the data produced in cell migration experiments FAIR (Findable, Accessible, Interoperable, and Reusable) [[Wilkinson2016]]
+        and to promote data access, data discovery, data preservation, maximise data re-use and repurpose through efficient annotation for long term archiving, and ultimately,
+        enable reproducibility of cell migration experiments.
+    </p>
+</section>
+
+<section id="SotD">
+</section>
+
+<section class="introductory">
+    <h2>Overview</h2>
+
+    <section>
+
+        <p>
+            This document is published by the <a href="http://cmso.science/">Cell Migration Standardisation Organisation</a>
+            <a href="https://cmso.science/groups/">Minimal Reporting Requirements Working Group</a>
+            as MIACME v1.1 specification.
+        </p>
+        <p>
+            MIACME is developed with and for the cell migration community to describe cell migration experiments.
+        </p>
+
+        <h4 id="contribute">How to contribute</h4>
+            <p>
+            We welcome and appreciate contributions. To make comments regarding this document and/or the associated reporting guideline,
+            participation is possible in a variety of ways:
+
+            <ul>
+            <li>participate in the <a href="https://cmso.science/meetings/">Cell Migration Standardization Organization workshops</a></li>
+            <li>report issues in our <a href="https://github.com/CellMigStandOrg/MIACME/issues">issues tracker</a></li>
+            <li>contact the Working Group via e-mail at: <a href="mailto:wg1-cmso-minimalrequirements@vib-ugent.be">wg1-cmso-minimalrequirements@vib-ugent.be</a></li>
+            <li>provide comments in the <a href="https://docs.google.com/spreadsheets/d/1OuJTqAMMf6LCrKnJC0WAXBW3LDXwX1DkfTTTFuA2I5M/edit?usp=sharing">MIACME live spreadsheet</a> detailing
+                the elements of the reporting guideline</li>
+            <li><a href="https://fairsharing.org/feedback/standard/1935">share your feedback</a> through <a href="https://doi.org/10.25504/FAIRsharing.vh2ye1">MIACME record</a> in the <a href="https://fairsharing.org">FAIRsharing.org</a> portal of standards, databases and policies</li>
+        <li>share your experiments details and datasets to use as <a href="https://github.com/CellMigStandOrg/CMSO-datasets">examples of MIACME representations</a></li>
+            </ul>
+
+            </p>
+
+            <p>
+            The MIACME reporting guideline and its associated documentation is made available under the terms of the
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.
+            </p>
+
+    </section>
+</section>
+
+<section>
+    <h2 id="background">Background</h2>
+
+    <p>
+        Reporting guidelines, or minimum information checklists, have been proposed as a way to understand the context, methods,
+        data and conclusions of experiments in different domains [[Taylor2008]].
+    </p>
+
+    <p>
+        These reporting guidelines for the life, environmental and biomedical sciences are maintained in the
+        <a href="http://fairsharing.org">FAIRSharing portal</a>. Their purpose and evolution have been considered
+        in the development of MIACME. While many of the original reporting guidelines were simply a list of desired content information,
+        many times available only in narrative form (e.g. in a PDF document), MIACME, whose <a href="https://fairsharing.org/bsg-s000642">information</a> is also
+        available in FAIRsharing, is taking a step further and formalising the requirements for reporting cell migration experiments, allowing for
+        validation of compliance against this reporting guideline.
+    </p>
+
+</section>
+
+<section>
+
+    <h2 id="miacme">MIACME Reporting Guideline</h2>
+
+    <p>
+        MIACME comprises a checklist, or list of elements, for the minimal description of cell migration experiments.
+        This release, version 1.1, is the result of discussions in the community and a refinement of MIACME v0.3. after further input and
+        further example representations from existing datasets and experimental setups. In particular, the change from v0.3 to v1.0 is the addition of more detail information
+        related to the <bold>pixel</bold> information, based on <a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">the Open Microscopy Environment (OME) schema</a>.
+    </p>
+
+    <p>
+        MIACME v1.1, as before, is composed of three main sections for the description of cell migration experiments:
+    <ol>
+        <li>Experimental setup: identifying the main elements of the experiment such as the type of assay, the perturbation or interference applied, the microenvironment (substrat for in vitro experiments or tissue for in vivo experiments), the cell type and, optionally, the medium.</li>
+        <li>Imaging condition: describing the imaging modality, the temporal resolution, a description of the different imaging channels and, optionally, the objective lesn.</li>
+        <li>Data: providing information about the raw or processed images, the total number of raw images and extracted features, when available.</li>
+    </ol>
+    </p>
+
+
+    <p>
+        These high-level sections and entities for MIACME v1.1 are shown here:
+        <figure>
+            <img src="https://raw.githubusercontent.com/CellMigStandOrg/MIACME/master/v1.0/figures/MIACME_1.0.jpg" alt="MIACME v1.0" style="width:700px;">
+            <figcaption>A diagram showing the main elements of MIACME 1.0 (also available as a <a href="https://docs.google.com/drawings/d/1d9lLP0r7IPuCh7d9rSMpVAndttpUyD9Ntozh5Cvg8tc/edit">Google diagram document</a>)</figcaption>
+        </figure>
+    </p>
+
+    <p>
+        The elements above are also presented in a more detailed form as a table. The table details the entities and properties, together with their definitions, their cardinality and
+        requirement level, as well as recommended sources for their annotation, examples and notes. Defining this common set of metadata to guide researchers in reporting scientific context is important for
+        data repositories, journals and funders in the cell migration domain.
+    </p>
+
+    <p>MIACME v1.1 added the following elements to MIACME 1.0:
+
+        <ul>
+            <li>addition of description fields for raw data, processed data and extracted features</li>
+        </ul>
+
+
+    </p>
+
+    <p> MIACME v1.0 spreadsheet can be accessed in <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0.ods">ods format</a>,
+        two cvs files (<a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0-cellmigrationspecific.csv">cell migration csv</a>
+        and <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0-genericinformation.csv">generic csv</a>) and
+        <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0.xlsx">xlsx format</a>.
+        The spreadsheet can also be viewed here and accessed as a <a href="https://docs.google.com/spreadsheets/d/1fJouFpBCs2Af8bXm2SUQy1ZJRaQrSgDLPB4mwoQvrek/edit#gid=0">Google document</a>:
+        <br>
+        <iframe src="https://docs.google.com/spreadsheets/d/1fJouFpBCs2Af8bXm2SUQy1ZJRaQrSgDLPB4mwoQvrek/edit#gid=0" frameborder="0" width="800px" height="600px"></iframe>
+        <br>
+    </p>
+
+    <p>
+        We split the spreadsheet in two worksheets:
+    <ol>
+        <li>A worksheet with generic elements for describing the experiment and related entities, such as investigation, study, contacts, publications.</li>
+        <li>A worksheet with the three main sections defined for describing cell migration experiments</li>
+    </ol>
+    </p>
+
+
+    <p>
+        The spreadsheet contains the following information:
+    <ul>
+        <li>Entity: An object that can exist independently and can be identified uniquely.</li>
+        <li>Entity Annotation: An ontology concept that annotates the corresponding entity.</li>
+        <li>Property: An attribute describing the corresponding entity.</li>
+        <li>Property Annotation:  An ontology concept that annotates the corresponding property.</li>
+        <li>Condition on Property: The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).</li>
+        <li>Definition: A statement of the exact meaning of the entity and/or property.</li>
+        <li>Value Type: The type of a property value.</li>
+        <li>Recommended resource: The recommended resources (e.g. ontology or database) that should be used to assign the values for the corresponding Entity/Property pair.</li>
+        <li>Cardinality: The expected number of occurrences for a particular property.</li>
+        <li>Requirement level: Following <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>, a word indicating the level of necessity for a particular property.</li>
+        <li>Evidence: A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.</li>
+        <li>Example(s): Typical cases for the values of a particular property.</li>
+        <li>Notes: Additional comments that may help the interpretation and representation of the corresponding entity and/or property.</li>
+    </ul>
+    </p>
+
+
+    <p>
+        The following figure provides an overview of MIACME entities, their relationships and cardinalities:
+        <figure>
+            <img src="https://raw.githubusercontent.com/CellMigStandOrg/MIACME/master/v1.0/figures/CMSO-MIACME-v1.0.jpg" alt="MIACME v1.0" style="width:700px;">
+            <figcaption>A diagram representing MIACME entities, their relationships and cardinalities.</figcaption>
+        </figure>
+
+    </p>
+    <p>
+        The top part of the figure includes the generic elements to describe entities such as investigations and studies, contact people, organisations, grants.
+        The bottom part show the three specific sections for cell migration experiments: experimental setup, imaging condition and data.
+    </p>
+
+    <p>
+        In addition to identifying the minimum set of descriptors for cell migration experiments, the working group worked on identifying MIACME descriptors for specific datasets associated with publications.
+        This exercise also looked into identifying ontology terms that could be used for annotating the descriptors and its values. Then, a list of the ontologies use was collected in a tabular form. The results
+        of this exercise can be accessed in <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/datasets/MIACMEv1.0-datasets-annotation-ontologies-collection.rtf">this rich text file</a>.
+    </p>
+
+
+    <p>
+        Another outcome of MIACME has been a representation of the entities relying on <a href="https://json-schema.org/">JSON schemas</a>, which is a vocabulary that allows to validate and annotate <a href="https://www.json.org/">JavaScript Object Notation (JSON)</a> documents.
+        The schemas are prepared to support the data to be in JSON for Linking Data (<a href="https://json-ld.org/">JSON-LD</a>) format.
+        The schemas can be accessed in the <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/schemas">schemas folder</a>.
+        In version 1.0, we have also added <a href="https://json-ld.org/">JSON-LD</a> context files. JSON-LD is JSON for linked data, supporting interconnecting web information. Context files represent a mapping between terms in JSON to vocabularies that provide
+        data semantics. The JSON-LD context files can be accessed in the <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/contexts">contexts folder</a>.
+
+    </p>
+
+    <p>
+        The MIACME schema can be visualised here:
+        <iframe src="https://fairsharing.github.io/JSONschema-documenter/?schema_url=https://w3id.org/mircat/miacme/schema/miacme_schema.json#" frameborder="0" width="800px" height="600px"></iframe>
+    </p>
+
+    <p>
+        The development of MIACME followed an iterative process. MIACME v1.0 was derived as a revision of MIACME v0.3, based on input from researchers reporting their datasets using MIACME.
+    </p>
+
+
+</section>
+
+
+<section>
+
+    <h2 id="miacme">MIACME ISA-Tab configurations</h2>
+
+    <p>
+        In order to facilitate the description of MIACME-compliant cell migration datasets, CMSO is relying on the <a href="http://isa-tools.org/format/specification/">ISA model</a>. ISA stands for Investigation (the project context), Study (a unit of research), and
+        Assay (the analytical measurements). The ISA model supports rich descriptions of the experimental metadata, making the associate data reproducible and reusable.
+    </p>
+
+    <p>
+        The ISA model can be <a href="http://isa-specs.readthedocs.io/">serialised in multiple formats</a>, including tabular format (ISA-Tab), the JavaScript Object Notation (JSON) and Resource Description Framework (RDF).
+    </p>
+
+    <p>
+        The metadata framework associated with the ISA model encompasses a series of <a href="http://isa-tools.org/software-suite/">open source software tools</a> that faciliate the manipulation of datasets described with the ISA model.
+    </p>
+
+    <p>
+        For MIACME, we provide a set of configuration files (or templates), allowing researchers to describe their datasets using the ISAcreator tool:
+        <ul>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/ISATab-configurations/isaconfig-MIACMEv1.0-20181017">configuration</a> for a single assay, where the user needs to specify the measurement and technology.</i>
+    <i>A <a href="https://github.com/CellMigStandOrg/MIACME/tree/master/v1.0/ISATab-configurations/isaconfig-MIACMEv0.3-multiassay-20181017">configuration</a> considering multiple assays, where the user can select the assay type (e.g. 3D cell tracking assay, capillary chamber migration assay)</i>
+        </ul>
+    </p>
+
+    <p>
+        These configuration files are <a href="https://www.w3.org/XML/">XML</a> files providing a template of the ISA model including the specific recommendations given by the MIACME reporting guideline. Using these templates in the ISAcreator tool (see the next section) is a way for researchers to provide the metadata for
+        their experiment.
+    </p>
+
+
+</section>
+
+<section>
+
+    <h2 id="isacreator">Creation of MIACME-compliant metadata</h2>
+
+    <p>
+    Given the MIACME ISA-Tab configurations described above, researchers could use the <a href="https://github.com/ISA-tools/ISAcreator">ISAcreator tool</a> to produce MIACME-compliant metadata about their experiments. ISAcreator is a Java-based
+    desktop application that supports spreadsheet-like functionality. By loading the
+    </p>
+
+    <p>
+    A version of ISAcreator including the MIACME configuration files is made available at <a href="https://github.com/CellMigStandOrg/ISAcreator-MIACME">the ISAcreator-MIACME repository</a>. There you will also find information on how to run and use ISAcreator.
+    </p>
+</section>
+
+<section>
+    <h4 id="roadmap">Future plans</h4>
+    MIACME has focused on identifying the minimum descriptors required to represent cell migration experiments.
+
+    MIACME version 1.0 is considered a stable version, but additions or modifications will be considered according to community feedback.
+
+</section>
+
+
+
+<section class="appendix">
+    <h4>Acknowledgements</h4>
+
+    <p>
+        The Cell Migration Standardization Organization acknowledges funding from the European Union's Horizon 2020 Programme
+        under Grant Agreement 634107 (PHC32-2014).
+    </p>
+
+
+</section>
+</body>
+</html>
