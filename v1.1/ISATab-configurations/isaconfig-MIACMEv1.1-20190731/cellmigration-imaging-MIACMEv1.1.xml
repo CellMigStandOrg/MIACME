@@ -1,0 +1,199 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="cellmigration-imaging-MIACMEv0.3"
+        isatab-assay-type="generic_assay" isatab-conversion-target="generic">
+        <measurement term-label="cell migration assay" term-accession=""
+            source-abbreviation=""/>
+        <technology term-label="microscopy imaging" term-accession="" source-abbreviation=""/>
+        <field header="Sample Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Sample Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <protocol-field protocol-type="imaging"/>
+        <field header="Parameter Value[assay type]" data-type="List"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The type of microscopy used to acquire images.]]></description>
+            <list-values>migration assay,Transwell migration assay,in-vitro wound healing assay,cell exclusion zone assay,fence assay,microcarrier bead assay,spheroid migration assay,capillary chamber migration assay,capillary tube assay,leukocyte migration agarose technique assay,single cell motility assay,cell tracking assay,invasion assay,Transwell invasion assay,Platypus invasion assay
+                3D cell tracking assay,gelatin degradation assay,vertical gel 3D migration,invasion assay, monodispersed cell invasion assay,spheroid confrontation assay,spheroid invasion assay</list-values>
+        </field>
+        
+        <field header="Parameter Value[imaging modality]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The type of microscopy used to acquire images.]]></description>
+            <recommended-ontologies>
+                <ontology id="" abbreviation="FBbi" name="Biological imaging methods" version="">
+                    <branch id="FBbi:00000241" name="microscopy"/>
+                </ontology>
+                <ontology id="" abbreviation="CHMO" name="Chemical Methods Ontology" version="">
+                    <branch id="CHMO:0000067" name="microscopy"/>
+                </ontology>
+            </recommended-ontologies>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[imaging sequence type]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Single or multiple imaging timepoints in the experiment.]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[observation period]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[For time-series, it is the timespan since the imaging process starts until it ends. For endpoint, it is the timespan since the starting point until the image is taken.]]></description>
+            <default-value/>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the duration.]]></description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>        
+        <field header="Parameter Value[time series interval]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The duration between two sequential frames of the time lapse series.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the duration.]]></description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>         
+        <field header="Parameter Value[channel definition]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Identification of the label or constrasts]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[objective lens]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel identifier]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[An identifier for the picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel dimension order]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The order of the dimensions.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>XYZCT, XYZTC, XYCTZ, XYCZT, XYTCZ, XYTZC</list-values>
+        </field>
+        <field header="Parameter Value[pixel type]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The type of picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>int8, int16, int32, uint8, uint16, uint32, float, double, complex, double-complex, bit</list-values>
+        </field>
+        <field header="Parameter Value[pixel sizeX]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the width dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeY]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the height dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeZ]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The range one picture element in the image spans in the depth dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeC]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The number of channels of the picture element.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel sizeT]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The number of time points.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[pixel physicalSizeX]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the width dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[physicalSizeX Unit]" data-type="List" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the physical size of the pixel in the width dimension.]]></description>
+            <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
+        </field>
+        <field header="Parameter Value[pixel physicalSizeY]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the height dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[physicalSizeY Unit]" data-type="List" is-multiple-value="false" is-required="false"
+               is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the physical size of the pixel in the height dimension.]]></description>
+            <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
+        </field>
+        <field header="Parameter Value[pixel physicalSizeZ]" data-type="Integer" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The physical size of the pixel in the depth dimension.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[physicalSizeZ Unit]" data-type="List" is-multiple-value="false" is-required="false"
+               is-forced-ontology="false">
+            <default-value/>
+            <description><![CDATA[The unit of the physical size of the pixel in the depth dimension.]]></description>
+            <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
+        </field>
+        <field header="Assay Name" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Assay Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Raw Data File" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Raw Data File]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <protocol-field protocol-type="data transformation"/>
+        <field header="Data Transformation Name" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[User-defined name for each data transformation applied]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Derived Data File" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The set of processed images produced by the study OR The set of extracted features produced by the study or the address to a CMSO Track file as a JSON data package .]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <structured-field name="factors"/>
+    </isatab-configuration>
+</isatab-config-file>

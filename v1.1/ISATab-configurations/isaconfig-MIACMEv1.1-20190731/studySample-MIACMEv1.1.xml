@@ -1,0 +1,185 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="studySample-MIACMEv0.3">
+        <measurement term-label="[Sample]" term-accession="" source-abbreviation=""/>
+        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <field header="Source Name" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Source Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Characteristics[cell model]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA["A description of the cells used in the experiment. For example: cell line, primary cell, patient-derived xenograft, organoid, synthetic cell.".]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="http://data.bioontology.org/ontologies/CLO" abbreviation="CLO"
+                          name="Cell Line Ontology" version="43"/>
+                <ontology id="http://data.bioontology.org/ontologies/CL" abbreviation="CL"
+                          name="Cell Ontology" version="44"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[cell type]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The type of cell being used in the study.]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="http://data.bioontology.org/ontologies/CLO" abbreviation="CLO"
+                          name="Cell Line Ontology" version="43"/>
+                <ontology id="http://data.bioontology.org/ontologies/CL" abbreviation="CL"
+                          name="Cell Ontology" version="44"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[organism]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The organism of origin of the cell.]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="http://data.bioontology.org/ontologies/NCBITAXON"
+                          abbreviation="NCBITAXON"
+                          name="National Center for Biotechnology Information (NCBI) Organismal Classification"
+                          version="2"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[specific cell description]" data-type="String"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The specific details about the cell.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Characteristics[cell provider]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate the provider, supplier or vendor of the cell/cell line]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Characteristics[tissue]" data-type="Ontology term" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Provide anatomical or histological information associated to the Source Biological material (for example, liver, epithelium,....). Ideally, provide UBERON uri]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="" abbreviation="UBERON" name="Uber anatomy ontology" version="">
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[cellular component]" data-type="Ontology term"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate cellular component from GO]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1070" abbreviation="GO" name="Gene Ontology" version="50101">
+                    <branch id="GO:0005575" name="cellular_component"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[life cycle stage]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate life cycle stage from uberon]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>primary cell,immortalized cell</list-values>
+        </field>
+        <field header="Characteristics[genotype]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate cell genotype]]></description>
+            <default-value></default-value>
+        </field>
+        <protocol-field protocol-type="tissue culture"/>
+        <field header="Parameter Value[(micro)environment]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[The nature or components of the material surrounding/contacting the cells for which migration is tested, including substrate, ECM protein or synthetic counterpart, tissue, other cells or entire organism.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>glass, plastic, ECM, gel collagen, fribronecting OR mouse, dermis, zebrafish, embryo</list-values>
+        </field>
+        <field header="Parameter Value[cell culture vessel]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate the nature of hardware used to grow the cell]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>,flask,uncoated microplate,coated microplate,petri dish</list-values>
+        </field>
+        <field header="Parameter Value[cell culture medium]" data-type="String"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture medium]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell culture serum]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate serum type used for culture]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>,bovine calf serum,fetal calf serum</list-values>
+        </field>
+        <field header="Parameter Value[cell culture serum concentration]" data-type="Double" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[final concentration of the serum]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="concentration unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[cell culture antibiotics]" data-type="String"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[list antibiotic compounds (from CHEBI) used in the culture ]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell culture temperature]" data-type="Double"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture incubation temperature ]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description>temperature"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000004" name="temperature unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[cell culture CO2 partial pressure]" data-type="Double"
+               is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[indicate CO2 partial pressure]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+                    is-forced-ontology="false">
+            <default-value/>
+            <description>percentage"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000002" name="mass unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Sample Name" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="true" is-hidden="false"
+               is-forced-ontology="false">
+            <description><![CDATA[Sample Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <structured-field name="characteristics"/>
+        <structured-field name="factors"/>
+    </isatab-configuration>
+</isatab-config-file>

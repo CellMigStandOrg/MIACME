@@ -1,0 +1,476 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="investigation-MIACMEv1.0">
+        <measurement term-label="[investigation]" term-accession="" source-abbreviation=""/>
+        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <field header="Investigation Identifier" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[Primary identifier for the investigation. Ideally, a persistent identifier but an internal user identifier at a minimum.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Title" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[The title of the investigation.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Description" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[A textual narrative comprised of one or more statements about the investigation.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Submission Date" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[Investigation Submission Date]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Public Release Date" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[Investigation Public Release Date]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Investigation Conclusions]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[A set of statements summarizing the findings of the investigation. It could be a URI referring to a nanopublication.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Created with configuration]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[Comment [Created with configuration]]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Last Opened With Configuration]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[Comment [Last Opened With Configuration]]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[ISA-Tab Files Version]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION">
+            <description><![CDATA[A number for versioning these ISA-Tab files.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation PubMed ID" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION PUBLICATIONS">
+            <description><![CDATA[Investigation PubMed ID]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Publication DOI" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION PUBLICATIONS">
+            <description><![CDATA[Investigation Publication DOI]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Publication Author List" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION PUBLICATIONS">
+            <description><![CDATA[Investigation Publication Author List]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Publication Title" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION PUBLICATIONS">
+            <description><![CDATA[Investigation Publication Title]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Publication Status" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION PUBLICATIONS">
+            <description><![CDATA[Investigation Publication Status]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Investigation Person Identifier]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[A persistent identifier of the person, it should be an ORCID.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Last Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Last Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person First Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person First Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Mid Initials" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Mid Initials]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Email" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Email]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Phone" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Phone]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Fax" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Fax]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Address" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Address]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Affiliation" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Affiliation]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Investigation Person Roles" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="INVESTIGATION CONTACTS">
+            <description><![CDATA[Investigation Person Roles]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Identifier" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Primary identifier for the experiment/study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Title" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A short sentence naming the study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Description" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A textual narrative comprised of one or more statements about the study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Submission Date" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Study Submission Date]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Public Release Date" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Study Public Release Date]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study File Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Study File Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Funding Organization Name]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The name of the funding agency/agencies that have sponsored the work detailed in the investigation.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Funding Organization Identifier]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[An identifier for the funding organization, e.g. from FundRef.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Grant Identifier]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Unique identifiers provided by the funding agency/agencies.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Grant Name]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The name of the grant and its funding program.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>        
+        <field header="Comment[Basic Approach]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A description of the study type or approach used, such as in vitro, in vivo, in silico.]]></description>
+            <default-value/>
+        </field>
+        <field header="Comment[Study Conclusions]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A set of statements summarizing the findings of the study. It could be a URI referring to a nanopublication.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[MIACME Version]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The version of MIACME that these ISA-Tab files should be compliant with.]]></description>
+            <default-value><![CDATA[1.0]]></default-value>
+        </field>
+        <field header="Comment[MIACME Compliance]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[Yes/No depending if these ISA-Tab files are compliant with the MIACME version indicated above. This field should be completed by the validator.]]></description>
+            <default-value><![CDATA[not known]]></default-value>
+            <list-values>yes,no,not known</list-values>
+        </field>
+        <field header="Comment[License For The Whole Dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the whole dataset associated with the study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Number Of Subjects]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of participants in the study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Number Of Biological Replicates]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of parallel measurements of biologically distinct samples, which capture random biological variation.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Number Of Technical Replicates]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of repeated measurements of the same sample, which represent independent measures of the random noise associated with protocols or equipment]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Number Of Raw Images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of raw images produced by the study]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[License For Raw Images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the raw images.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Number Of Processed Images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The number of processed images produced by the study]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[License For Processed Images]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the processed images.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Extracted Features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The set of extracted features produced by the study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[License For The Extracted Features]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[The terms of use of the extracted features data.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Extracted Features Curation Process]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A free text description of what was the curation process applied, if any]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study PubMed ID" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PUBLICATIONS">
+            <description><![CDATA[Study PubMed ID]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Publication DOI" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PUBLICATIONS">
+            <description><![CDATA[Study Publication DOI]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Publication Author List" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PUBLICATIONS">
+            <description><![CDATA[Study Publication Author List]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Publication Title" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PUBLICATIONS">
+            <description><![CDATA[Study Publication Title]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Publication Status" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PUBLICATIONS">
+            <description><![CDATA[Study Publication Status]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Study Person Identifier]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[A persistent identifier of the person, it should be an ORCID.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Last Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Last Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person First Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person First Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Mid Initials" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Mid Initials]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Email" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Email]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Phone" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Phone]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Fax" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Fax]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Affiliation" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Affiliation]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Person Roles" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[Study Person Roles]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Design Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY DESIGN DESCRIPTORS">
+            <description><![CDATA[Study Design Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Factor Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY FACTORS">
+            <description><![CDATA[Study Factor Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Factor Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY FACTORS">
+            <description><![CDATA[Study Factor Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Assay Measurement Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY ASSAYS">
+            <description><![CDATA[Study Assay Measurement Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Assay Technology Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY ASSAYS">
+            <description><![CDATA[Study Assay Technology Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Assay Technology Platform" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY ASSAYS">
+            <description><![CDATA[Study Assay Technology Platform]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Assay File Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY ASSAYS">
+            <description><![CDATA[Study Assay File Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Description" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Description]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol URI" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol URI]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Version" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Version]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Parameters Name" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Parameters Name]]></description>
+            <default-value/>
+        </field>
+        <field header="Study Protocol Components Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Components Name]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Study Protocol Components Type" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY PROTOCOLS">
+            <description><![CDATA[Study Protocol Components Type]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <structured-field name="factors"/>
+    </isatab-configuration>
+</isatab-config-file>
