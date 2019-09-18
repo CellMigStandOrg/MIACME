@@ -7,5 +7,7 @@
     "license": "obo:NCIT_C43611",
     "files": "obo:NCIT_C42883",
     "numberOfFiles": "obo:NCIT_C25256",
-    "curationProcess": "obo:NCIT_C48292"
+    "curationProcess": "obo:NCIT_C48292",
+    "keyword": "obo:NCIT_C43513"
+
 }

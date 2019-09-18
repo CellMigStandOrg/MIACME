@@ -51,8 +51,10 @@
         "curationProcess": {
             "description": "A free text description of what was the curation process applied.",
             "type": "string"
+        },
+        "keyword": {
+            "description": "",
+            "type": "string"
         }
-
-
     }
 }
