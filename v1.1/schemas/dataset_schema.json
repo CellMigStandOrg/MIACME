@@ -1,0 +1,60 @@
+{
+    "id": "https://w3id.org/mircat/miacme/schema/dataset_schema.json",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "MIACME dataset schema",
+    "version": "1.1",
+    "description": "JSON-schema representing a dataset in MIACME",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "description": "The JSON-LD context",
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object"
+                },
+                {
+                    "type": "array"
+                }
+            ]
+        },
+        "@id": {
+            "description": "The JSON-LD identifier",
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "description": "The JSON-LD type",
+            "type": "string",
+            "enum": [
+                "Dataset"
+            ]
+        },
+        "description": {
+            "description": "A description of the dataset.",
+            "type": "string"
+        },
+        "license": {
+            "description": "The terms of use of the dataset.",
+            "type": "string"
+        },
+        "files": {
+            "description": "A description of the dataset.",
+            "type": "array"
+        },
+        "numberOfFiles": {
+            "description": "The number of files in the dataset.",
+            "type": "integer"
+        },
+        "curationProcess": {
+            "description": "A free text description of what was the curation process applied.",
+            "type": "string"
+        },
+        "keyword": {
+            "description": "",
+            "type": "string"
+        }
+    }
+}

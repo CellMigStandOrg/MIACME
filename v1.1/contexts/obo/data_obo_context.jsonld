@@ -1,0 +1,9 @@
+{    
+    "obo": "http://purl.obolibrary.org/obo/",
+    "edam": "http://edamontology.org/",
+    "Data": "obo:IAO_0000027",
+    "@language": "en",
+    "rawImagesDataset": "obo:NCIT_C47824",
+    "processedImagesDataset": "obo:NCIT_C47824",
+    "extractedFeaturesDataset": "obo:NCIT_C47824"
+}

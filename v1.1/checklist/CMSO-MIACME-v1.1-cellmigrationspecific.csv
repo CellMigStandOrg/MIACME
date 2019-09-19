@@ -1,0 +1,81 @@
+"IF YOU HAVE FEEDBACK ON MIACME, PLEASE USE THE LIVE SPREADSHEET TO LEAVE COMMENTS, THANKS: http://tiny.cc/miacme-live",,,,,,,,,,,,
+Diagram for MIACME v1.1:  https://docs.google.com/drawings/d/1_tYOp5azGefPTz5nJc6DYReP9rdGj77w-JKvdtPtfq0/edit,,,,,,,,,,,,
+Entity,Entity Annotation,Property,Property Annotation,Condition on Property,"Definition
+",Value Type,Recommended Ontology / Resource,Cardinality,Requirement Level,Evidence,Example(s),Notes
+An object that can exist independenty and can be identified uniquely.,An ontology concept that annotates the corresponding entity.,An attribute describing the corresponding entity.,An ontology concept that annotates the corresponding property.,The corresponding property should satisfy the specified condition (e.g. should be provided only if another property has a specific value).,"A statement of the exact meaning of the entity and/or property.
+",The type of a property value.,The recommended resources (e.g. ontology or database) that should be used to assigned the values for the corresponding Entity/Property pair.,The expected number of occurrences for a particular property.,"Following RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt), a word indicating the level of necessity for a particular property.
+","A reference to the document, article, schema, discussion that yields a particular entity or property necessary to be included and its requirement level.","Typical cases for the values of a particular property.
+",Additional comments that may help the interpretation and representation of the corresponding entity and/or property.
+SECTION: Experimental Setup,,,,,,,,,,,,
+ExperimentalSetup,,,,,,,,,,,,
+,,basicApproach,,,"A description of the study type or approach used, such as in vitro, in vivo, in silico.",string or CV,,,MUST,,"in vitro, in vivo, in silico",
+,,cellModel,,,"A description of the cells used in the experiment.
+",CellModel,"CL,CLO",1..n,MUST,,"cell line, primary cell, patient-derived Xenograft,Organoid,Synthetic cell,etc",
+,,assay,,,"The migration/invasion assay for this investigation, and its specifications.",Assay,,1,MUST,,"single-cell migration, collective cell migration, developmental assay, 
+immune response, chemotaxic, microfluidic, wound-healing, spheroid",
+,,treatment,,,The manipulation/perturbation of which the (migratory) effect is being tested.,Treatment,"ChEBI for compounds, PRO for specific proteins or targetted genes",1..n,MUST,,"(RNAi, gene construct, chemicals, serum, substrate stiffness) or specific protein",
+,,microEnvironment,,,"The nature or components of the material surrounding/contacting the cells for which migration is tested, including substrate, ECM protein or synthetic counterpart, tissue, other cells or entire organism.",string or CV,,1..n,MUST,,"glass, plastic, ECM, gel collagen, fribronecting OR mouse, dermis, zebrafish, embryo",
+,,organism ,,if microEnvironment = tissue,"The organism corresponding to the microEnvironment, if it is a tissue.",string or CV,NCBITaxon,0..n,MAY,,,
+,OBI_0000079,medium,,"if basicApproach=in vitro, it must be provided","Solution used to provide nutritives and motility-assisting additives to migrating cells
+",string or CV,,,MAY,,"Epidermal Growth Factor (EGF) or motility assisted aditive (http://www.ebi.ac.uk/efo/EFO_0003298), Hepatocyte Growth Factor (HGF) (http://www.ebi.ac.uk/efo/EFO_0003303 ), DMEM (solution in definition: http://purl.obolibrary.org/obo/OBI_0000918))","This descriptor is only relevant for cells in some form of cell culture (in vitro or ex vivo, but not for in vivo)"
+,,,,,,,,,,,,
+CellModel,,,,,,,,,,,,
+,,cellType,,,The type of cell being used in the study.,string or CV,,1..n,MUST,"CL, CLO","cell line, primary cell, patient-derived cell, xenograft, organoid, synthetic cell",
+,,specificCellDetails,,,The specific details about the cell.,string or CV,,1..n,MUST,"CL, CLO","HT1080 (EFO:0002059),  neutrophil (CL:0000775)",
+,,organism,,,The organism of origin of the cell.,string or CV,,,MUST,NCBITaxonomy,Homo Sapiens,
+,,,,,,,,,,,,
+Assay,,,,,,,,,,,,
+,,type,,,The kind of assay.,string or CV,OBI (after adding the specific terms),,MUST,,,
+,,cellInput,,,"The manner in which the cell population is presented at the start of the assay
+",string or CV,,,MUST,"CL, CLO","single cells, as a spheroid (a cell aggregate)  or as a confluent cell sheet,",
+,,,,,,,,,,,,
+Treatment,treatment,,,,,,,,,,,
+Pairs of factor and factorValues,,factor,,,The nature of the perturbation/intervention/treatment being applied to the biological system. The independent variables.,string or CV,,1,MUST,,"For example, the agent could be RNAi, gene construct, chemical compound, serum, substrate stiffness",
+,factor level,factorValues,,,Sets of value and unit.,string or CV,,1..n,MUST,,"if treatmentType=""chemical compound"", the values could be N-Formylmethionine Leucyl-Phenylalanine and Vehicle (control)",
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+SECTION: ImagingCondition,,,,,,,,,,,,
+ImagingCondition,,,,,,,,,,,,
+,,modality,,,The type of microscopy used to acquire images.,string or CV,"Biological imaging methods (FBbi) or Chemical Methods Ontology (CHMO)
+",1,MUST,,"confocal microscopy, spinning disk, wide-field, multi-photon, light-sheet, super-resolution, phase-contrast",
+,,imageSequenceType,,,Single or multiple imaging timepoints in the experiment. ,string or CV,,1,MUST,,endpoint or time-series,
+,,observationPeriod,,,"For time-series, it is the timespan since the imaging process starts until it ends. For endpoint, it is the timespan since the starting point until the image is taken.",real number,,1,"MUST, if condition is true",,36,
+,,observationPeriodUnit,,,The unit of the observation period.,string or CV,"UO, branch corresponding time",1,,,"hours, minutes",
+,,timeSeriesInterval,,if imageSequenceType=time-series,The duration between two sequential frames of the time lapse series.,real number,,1,"MUST, if condition is true",,10,
+,,timeSeriesIntervalUnit,,if imageSequenceType=time-series,The unit of the time series interval.,string or CV ,,1,,,minutes,
+,,channelDefinition,,,Identification of the label or constrasts,string,,1..n,MUST,,,
+,,pixels,,,The physical dimension of one picture element in your image.,Pixels,,1..n,MUST,,0.01,"for 3D tracking, it will be reconstructed"
+,,objectiveLens,,,"Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view)",string or CV,,0..1,MAY,,,
+,,numericalAperture,,,"Value that indicates the light acceptance angle of the objective (
+determines the light gathering power, resolving power, and depth of 
+field of the objective).",string,,0..1,MAY,,,
+,,,,,,,,,,,,
+Pixel,,,,,A picture element.,,,,,see https://docs.openmicroscopy.org/bio-formats/5.8.2/developers/generating-test-images.html,,
+,,identifier,,,An identifier for the picture element.,string or URL,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_ID,,
+,,dimensionsOrder,,,The order of the dimensions.,string,"Enum= XYZCT, XYZTC, XYCTZ, XYCZT, XYTCZ, XYTZC",1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_DimensionOrder,,
+,,type,,,The type of picture element.,string,"Enum= int8, int16, int32, uint8, uint16, uint32, float, double, complex, double-complex, bit",,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_Type,,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_Type
+,,sizeX,,,The range one picture element in the image spans in the width dimension. ,positive integer,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#SizeX,0.01,"for 3D tracking, it will be reconstructed"
+,,sizeY,,,The range one picture element in the image spans in the height dimension.,positive integer,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#SizeY,,
+,,sizeZ,,,The range one picture element in the image spans in the depth dimension.,positive integer,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#SizeZ,,
+,,sizeC,,,The number of channels of the picture element.,positive integer,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#SizeC,,
+,,sizeT,,,The number of time points.,positive integer,,1,MUST,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#SizeT,,
+,,physicalSizeX,,,The physical size of the pixel in the width dimension.,positive real number,,1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeX,,
+,,physicalSizeXUnit,,,The unit of the physical size of the pixel in the width dimension.,string or CV,"Enum=Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame",1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeXUnit,,
+,,physicalSizeY,,,The physical size of the pixel in the height dimension.,positive real number,,1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeY,,
+,,physicalSizeYUnit,,,The unit of the physical size of the pixel in the height dimension.,string or CV,"Enum=Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame",1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeYUnit,,
+,,physicalSizeZ,,,The physical size of the pixel in the depth dimension.,positive real number,,1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeZ,,
+,,physicalSizeZUnit,,,The unit of the physical size of the pixel in the depth dimension.,string or CV,"Enum=Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame",1,SHOULD,https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PhysicalSizeZUnit,,
+,,,,,,,,,,,,
+SECTION: Data,,,,,,,,,,,,
+Data,,,,,,,,,,,,
+,,rawImagesDataset,,,The dataset composed of the raw images of the study,Dataset,,0..n,MAY,,,
+,,processedImagesDataset,,,The dataset composed of the processed images of the study,Dataset,,0..n,MAY,,,
+,,extractedFeaturesDataset,,,The dataset composed of the extracted features of the study,Dataset,,0..n,MAY,,"xy-coordinates, velocity, area, pixel intensity",
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Dataset,,description,,,A description of the dataset.,string,,0..1,MAY,,,
+,,files,,,The set of files associated with the dataset.,link(s) to file(s),,0..n,MAY,,,
+,,numberOfFiles,,,The number of files in the dataset.,integer,,0..1,MAY,,,
+,,license,,,The terms of use of the dataset.,string or IRI,,0..1,MAY,,,
+,,curationProcess,,,A free text description of what was the curation process applied.,string,,0..1,MAY,,,
+,,keyword,,,A tag describing the dataset,string,,0..n,MAY,,,

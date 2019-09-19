@@ -1,0 +1,13 @@
+{    
+    "obo": "http://purl.obolibrary.org/obo/",
+    "edam": "http://edamontology.org/",
+    "Dataset": "obo:IAO_0000027",
+    "@language": "en",
+    "description": "obo:NCIT_C25365",
+    "license": "obo:NCIT_C43611",
+    "files": "obo:NCIT_C42883",
+    "numberOfFiles": "obo:NCIT_C25256",
+    "curationProcess": "obo:NCIT_C48292",
+    "keyword": "obo:NCIT_C43513"
+
+}
