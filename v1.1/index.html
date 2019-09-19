@@ -201,9 +201,10 @@
 
     <p>
         MIACME comprises a checklist, or list of elements, for the minimal description of cell migration experiments.
-        This release, version 1.1, is the result of discussions in the community and a refinement of MIACME v0.3. after further input and
-        further example representations from existing datasets and experimental setups. In particular, the change from v0.3 to v1.0 is the addition of more detail information
-        related to the <bold>pixel</bold> information, based on <a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">the Open Microscopy Environment (OME) schema</a>.
+        This release, version 1.1, is the result of a refinement of MIACME v0.1. after further input and
+        further example representations from existing datasets and experimental setups. In particular, the change from v1.0 to v1.1 is the addition of more detail information
+        related to the <bold>datasets</bold> produced in the experiment, now considering raw images dataset, processed images dataset and extracted features dataset. The previous version, considered the addition of
+        <b>pixel</b> information based on <a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">the Open Microscopy Environment (OME) schema</a>.
     </p>
 
     <p>
@@ -233,16 +234,16 @@
     <p>MIACME v1.1 added the following elements to MIACME 1.0:
 
         <ul>
-            <li>addition of description fields for raw data, processed data and extracted features</li>
+            <li>an entity for dataset, including fields for description, license and others </li>
+            <li>now the data is considered as datasets raw data, processed data and extracted features</li>
         </ul>
-
 
     </p>
 
-    <p> MIACME v1.0 spreadsheet can be accessed in <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0.ods">ods format</a>,
-        two cvs files (<a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0-cellmigrationspecific.csv">cell migration csv</a>
-        and <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0-genericinformation.csv">generic csv</a>) and
-        <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.0/checklist/CSMO-MIACME-v1.0.xlsx">xlsx format</a>.
+    <p> MIACME v1.0 spreadsheet can be accessed in <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.1/checklist/CMSO-MIACME-v1.1.ods">ods format</a>,
+        two cvs files (<a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.1/checklist/CSMO-MIACME-v1.1-cellmigrationspecific.csv">cell migration csv</a>
+        and <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.1/checklist/CMSO-MIACME-v1.1-genericinformation.csv">generic csv</a>) and
+        <a href="https://github.com/CellMigStandOrg/MIACME/blob/master/v1.1/checklist/CMSO-MIACME-v1.1.xlsx">xlsx format</a>.
         The spreadsheet can also be viewed here and accessed as a <a href="https://docs.google.com/spreadsheets/d/1fJouFpBCs2Af8bXm2SUQy1ZJRaQrSgDLPB4mwoQvrek/edit#gid=0">Google document</a>:
         <br>
         <iframe src="https://docs.google.com/spreadsheets/d/1fJouFpBCs2Af8bXm2SUQy1ZJRaQrSgDLPB4mwoQvrek/edit#gid=0" frameborder="0" width="800px" height="600px"></iframe>
