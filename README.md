@@ -15,6 +15,12 @@ The MIACME reporting guideline and its associated documentation is made availabl
 
 - [MIACME spreadsheet with all versions](https://docs.google.com/spreadsheets/d/1yw9qh5oU_B9Ig1RorXYf-qv3BENS27IwiW-N3sXauQo/edit?usp=sharing)
 
+## Version 1.1
+
+- [MIACME v1.1 specification](http://cmso.science/MIACME/v1.1/)
+- [MIACME v1.1 spreadsheet](https://docs.google.com/spreadsheets/d/1gvFEDfoiqfTb-fgSEiLB4JphZ6vH3MKLJq75-OvdRsU/edit#gid=0)
+
+
 ## Version 1.0
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2481079.svg)](https://doi.org/10.5281/zenodo.2481079)
 
