@@ -297,6 +297,24 @@
             <description><![CDATA[A free text description of what was the curation process applied, if any]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        <field header="Comment[Raw Images Dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A link to a description file for the raw images dataset.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Processed Images Dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A link to a description file for the processed images dataset.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Extracted Features Dataset]" data-type="String" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
+               is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[A link to a description file for the extracted features dataset.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <field header="Study PubMed ID" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY PUBLICATIONS">
