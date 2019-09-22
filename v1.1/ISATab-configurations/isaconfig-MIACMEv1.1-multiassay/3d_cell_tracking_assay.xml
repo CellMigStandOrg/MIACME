@@ -137,36 +137,36 @@
             <description><![CDATA[The physical size of the pixel in the width dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment[physicalSizeX Unit]" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Parameter Value[pixel physicalSizeX Unit]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
-            <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the width dimension.]]></description>
             <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
-        </field>
+        </field>       
         <field header="Parameter Value[pixel physicalSizeY]" data-type="Integer" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[The physical size of the pixel in the height dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment[physicalSizeY Unit]" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Parameter Value[pixel physicalSizeY Unit]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
-            <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the height dimension.]]></description>
             <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
-        </field>
+        </field>       
         <field header="Parameter Value[pixel physicalSizeZ]" data-type="Integer" is-file-field="false"
                is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
             <description><![CDATA[The physical size of the pixel in the depth dimension.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment[physicalSizeZ Unit]" data-type="List" is-multiple-value="false" is-required="false"
+        <field header="Parameter Value[pixel physicalSizeZ Unit]" data-type="List" is-file-field="false"
+               is-multiple-value="false" is-required="false" is-hidden="false"
                is-forced-ontology="false">
-            <default-value/>
             <description><![CDATA[The unit of the physical size of the pixel in the depth dimension.]]></description>
             <list-values>Ym, Zm, Em, Pm, Tm, Gm, Mm, km, hm, dam, m, dm, cm, mm, µm, nm, pm, fm, am, zm, ym, Å, thou, li, in, ft, yd, mi, ua, ly, pc, pt, pixel, reference frame</list-values>
-        </field>
+        </field>       
         <field header="Assay Name" data-type="String" is-file-field="false"
                is-multiple-value="false" is-required="true" is-hidden="false"
                is-forced-ontology="false">
